@@ -188,3 +188,32 @@ Java中重写函数的返回值，可以是本类的object，也可以是直接�
 
 父类和子类不在同一个包中，子类***可以***访问父类的protected成员，但***不可以***访问父类对象的protected成员
 
+# 抽象类和抽象方法
+
+```java
+abstract class Animal { // <-- 抽象类只能被继承，不能实例化
+    abstract public void shout(); //<-- 抽象方法在父类中可以不实现
+}
+
+class Dog extends Animal {
+    public void shout() { // <-- 抽象方法必须在子类中实现
+        System.out.println("Shout!");
+    }
+}
+```
+
+- 有抽象方法的类只能是抽象类
+- 抽象类不能实例化
+- 抽象类只能被继承
+- 抽象类的方法必须被子类实现
+
+
+
+# 接口
+
+- 规范和实现彻底分离
+- 接口中的常量总是public static final（可以省略）
+- 接口中的方法总是public abstract（可以省略）
+- 接口可以继承别的接口
+
+
