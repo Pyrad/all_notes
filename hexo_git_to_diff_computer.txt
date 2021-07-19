@@ -1,0 +1,68 @@
+1. create a clean local hexo blog directory
+   
+ _config.yml
+ package.json
+ scaffolds/
+ source/
+ themes/
+
+1. create a clean local hexo blog directory
+# install hexo
+npm install hexo-cli -g
+
+# initialize hexo folder
+# hexo init FOLDER_NAME
+hexo init hexolocal
+
+
+2. Change "_config.yml"
+	url: https://username.github.io/
+	...
+	
+	deploy:
+	type: git
+	repo: https://github.com/username/username.github.io
+	branch: master
+
+3. Generate
+# under hexo folder
+hexo g
+
+# view on the local
+hexo s 
+
+4. Pull the Blog page repo & copy the local hexo files to a different working branch
+	git clone git@github.com:Pyrad/Pyrad.github.io.git
+	cd Pyrad.github.io
+	git pull
+	
+	# create a new branch for hexo folder
+	git branch hexo
+	
+	# !!! Change to the hexo branch
+	git checkout hexo
+	
+	# clean the branch
+	git rm -rf .
+	
+	# copy all files inside the previous hexo folder here
+	cp -rf /path/to/hexolocal/.github .
+	cp -rf /path/to/hexolocal/scaffolds/ .
+	cp -rf /path/to/hexolocal/source/ .
+	cp -rf /path/to/hexolocal/themes/ .
+	cp -rf /path/to/hexolocal/.gitignore/ .
+	cp -rf /path/to/hexolocal/_config.*/ .
+	cp -rf /path/to/hexolocal/package.json/ .
+	cp -rf /path/to/hexolocal/package-lock.json/ .
+	
+	git add .
+	git commit -m "create hexo branch for blog source files; Use this as the default working branch for blogging"
+	git push ### Should set up the upstream first
+
+4. Regenerate the hexo file modules
+   cnpm install
+   cnpm install hexo-deployer-git --save
+5. Try hexo
+   hexo -v
+   hexo g
+   hexo s
