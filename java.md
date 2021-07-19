@@ -688,16 +688,22 @@ interface A {
 
 2. 字符串相关（String）
 
-   - String：不可变字符序列
-   - StringBuilder：可变字符序列（效率高，线程不安全）
-   - StringBuffer：可变字符序列（效率低，线程安全）
+   - **String**：不可变字符序列
+   - **StringBuilder**：可变字符序列（效率高，线程不安全）
+   - **StringBuffer**：可变字符序列（效率低，线程安全）
 
 3. 时间处理
+   时间在java里也是一个long类型的数组，以1970.1.1 00:00:00为时间原点
+   **Date**类提供时间的基本操作
+   **Calendar**类是一个抽象类，提供关于日期计算的功能，其一个具体子类是**GregorianCalendar**。
 
    ```java
    import java.text.ParseException;
    import java.text.SimpleDateFormat;
    import java.util.Date;
+   import java.util.Calendar;
+   import java.util.GregorianCalendar;
+   
    
    public static void test() {
            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
@@ -712,8 +718,133 @@ interface A {
                e.printStackTrace();
            }
    }
+   
+   public static void test2() {
+           GregorianCalendar c = new GregorianCalendar(2021, 7, 19, 21, 2, 23);
+           int cur_y = c.get(Calendar.YEAR);
+           int cur_m = c.get(Calendar.MONTH);
+   
+           c.set(Calendar.DATE, 3);
+   
+           c.add(Calendar.MONTH, +3);
+   
+           GregorianCalendar c0 = new GregorianCalendar();
+           c0.setTime(new Date());
+   
+           System.out.println(c);
+           System.out.println(c0);
+   
+   }
    ```
 
    
 
 4. 其他
+   **Math**类：abs，acos，asin，sin，cos，sqrt，pow，max，min，ceil，floor，random（[0,1)之间的随机数），round，toDegrees，toRadians
+   **Random**类
+
+   ```java
+       public static void test() {
+           Random r = new Random();
+           r.nextDouble();
+           r.nextInt();
+           r.nextFloat();
+           r.nextBoolean();
+           r.nextInt(10);
+       }
+   ```
+
+   **File**类
+   在java.io.File中，默认创建文件在系统定义的***user.dir***中
+
+   ```java
+   package com.pyrad.testFile;
+   
+   import java.io.File;
+   import java.io.IOException;
+   import java.util.Date;
+   
+   public class testFile {
+       public static void main(String[] args) throws IOException {
+           test();
+       }
+   
+       public static void test() throws IOException {
+           // Get current project's path
+           System.out.println("Current project path is:");
+           System.out.println(System.getProperty("user.dir"));
+   
+           // default path is: user.dir
+           File f = new File("first.java.txt");
+           if (f.exists()) {
+               System.out.printf("File %s already exists\n", f.getName());
+               System.out.println("File is directory:" + f.isDirectory());
+               System.out.println("File is file:" + f.isFile());
+               System.out.println("File size:" + f.length());
+               System.out.println("File last modified:" + new Date(f.lastModified()));
+               // Other operations:
+               // boolean suc = f.mkdir()
+               // f.mkdirs()
+               // f.delete()
+           } else {
+               f.createNewFile();
+               System.out.printf("Create file %s\n", f.getName());
+           }
+   
+           File f2 = new File("C:\\Users\\Pyrad\\IdeaProjects\\JavaLearn\\src\\com\\pyrad\\testFile\\java.2nd.txt");
+           f2.createNewFile();
+       }
+   }
+   ```
+
+   枚举
+
+   枚举类隐式地继承了**java.lang.Enum**
+
+   ```java
+   public class testEnum {
+       public static void main(String[] args) {
+           test();
+       }
+   
+       public static void test() {
+           System.out.println(Season.SPRING);
+           System.out.println(Season.valueOf(Season.AUTUMN.name()));
+           System.out.println(Season.valueOf(Season.AUTUMN.name()));
+   
+           for (Week k : Week.values()) {
+               System.out.println(k);
+           }
+   
+           int a = new Random().nextInt(4);
+           Season[] ss = Season.values();
+           switch (ss[a]) {
+               case SPRING:
+                   System.out.println("Spring");
+                   break;
+               case SUMMER:
+                   System.out.println("Summer");
+                   break;
+               case AUTUMN:
+                   System.out.println("Autum");
+                   break;
+               case WINTER:
+                   System.out.println("Winter");
+                   break;
+               default:
+                   System.out.println("Not known");
+                   break;
+           }
+       }
+   }
+   
+   enum Season {
+       SPRING, SUMMER, AUTUMN, WINTER
+   }
+   
+   enum Week {
+       MON, TUE, WED, THU, FRI, SAT, SUN
+   }
+   ```
+
+   
