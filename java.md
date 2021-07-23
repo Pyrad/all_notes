@@ -848,3 +848,69 @@ interface A {
    ```
 
    
+
+# 异常
+
+第一步：抛出异常对象
+
+第二步：捕获异常对象
+
+异常对象都是继承于**java.lang.Throwable**类，**Throwable**有两个子类**Error**和**Exception**。
+
+Error类不用处理也处理不了，但Exception可以处理。
+
+Exception类分为两种：**CheckedException**和（**RuntimeException**）**UncheckedException**。
+
+不管有无异常，**finally**都会执行，通常用来释放前面申请的资源
+
+处理方式：
+
+（1）捕获异常
+
+（2）声明异常
+
+（3）try-with-resource（新，JDK7，它可以自动关闭实现了**AutoClosable**接口的类）
+
+```java
+// （1）捕获并处理异常
+try {
+    // whatever
+} catch (Exception e1) {
+    e1.printStackTrace();
+} catch (Exception e2) {
+    e2.printStackTrace();
+} finally {
+    // always execute here, no matter there's exception or not
+}
+
+// （2）声明异常：谁调用谁处理
+static public void test() throws Exception {
+     System.out.println("Might exception");
+}
+
+
+    static public void test3() {
+        try (FileReader reader = new FileReader("d:/a.txt");){
+            char c = (char) reader.read();
+            System.out.println(c);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+```
+
+自定义异常
+
+一般定义两个构造器：default constructor和带有信息的constructor
+
+```java
+class IllegalAgeException extends Exception {
+    // default constructor
+    public IllegalAgeException() {}
+    // constructor with message
+    public IllegalAgeException(String msg) {
+        super(msg);
+    }
+}
+```
+
