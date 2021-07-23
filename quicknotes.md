@@ -21,3 +21,8 @@ pip install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.ali
 ```
 
 
+
+## **labuladong** 算法小抄
+
+[https://labuladong.gitee.io/algo/](https://labuladong.gitee.io/algo/)
+
