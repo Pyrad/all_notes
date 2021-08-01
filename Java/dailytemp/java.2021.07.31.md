@@ -1351,7 +1351,37 @@ fis = new FileInputStream(curDirName + "/riho.jpg");bis = new BufferedInputStrea
 以字符（**Unicode字符**）的方式读入文件里面的内容，每次读入一个字符值（Unicode）
 
 ```java
-File curDir = new File(".");String curDirName = curDir.getCanonicalPath();FileReader freader = null;freader = new FileReader(curpath + "/staticStuffs/testwords.txt");int temp = 0;while ((temp = freader.read()) != -1) {    System.out.println(temp); // unicode value in int type    System.out.println((char) temp); // unicode value}freader.close();/** * 假如文件内容为"Good day today 你好！"，则输出如下： * 71: G * 111: o * 111: o * 100: d * 32:   * 100: d * 97: a * 121: y * 32:   * 116: t * 111: o * 100: d * 97: a * 121: y * 32:   * 20320: 你 * 22909: 好 * 33: ! */
+File curDir = new File(".");
+String curDirName = curDir.getCanonicalPath();
+FileReader freader = null;
+freader = new FileReader(curpath + "/staticStuffs/testwords.txt");
+int temp = 0;
+while ((temp = freader.read()) != -1) {    
+    System.out.println(temp); // unicode value in int type
+    System.out.println((char) temp); // unicode value
+}
+freader.close();
+/** 
+ * 假如文件内容为"Good day today 你好！"，则输出如下： 
+ * 71: G 
+ * 111: o 
+ * 111: o 
+ * 100: d 
+ * 32:   
+ * 100: d 
+ * 97: a 
+ * 121: y 
+ * 32:   
+ * 116: t 
+ * 111: o 
+ * 100: d 
+ * 97: a 
+ * 121: y 
+ * 32:   
+ * 20320: 你 
+ * 22909: 好 
+ * 33: ! 
+ */
 ```
 
 #### 文件字符输出流 FileWriter
@@ -1361,7 +1391,17 @@ File curDir = new File(".");String curDirName = curDir.getCanonicalPath();FileRe
 注意：如果用FileWriter初始化一个已经存在的文件，那么再写数据到该文件里面的时候，会把文件之前的内容覆盖。
 
 ```java
-String curpath = getCurrentDirPath();System.out.println(curpath);FileWriter fwriter = null;fwriter = new FileWriter(curpath + "/staticStuffs/testwords.copy.txt");fwriter.write("Good day today 你好!\r\n");fwriter.write("Good day today 你好！");// 追加文件内容，在构造FileWriter的时候给定第二个参数fwriter2 = new FileWriter(curpath + "/staticStuffs/testwords.copy.txt", true);fwriter2.write("Not anymore");fwriter.close();fwriter2.close();
+String curpath = getCurrentDirPath();
+System.out.println(curpath);
+FileWriter fwriter = null;
+fwriter = new FileWriter(curpath + "/staticStuffs/testwords.copy.txt");
+fwriter.write("Good day today 你好!\r\n");
+fwriter.write("Good day today 你好！");
+// 追加文件内容，在构造FileWriter的时候给定第二个参数
+fwriter2 = new FileWriter(curpath + "/staticStuffs/testwords.copy.txt", true);
+fwriter2.write("Not anymore");
+fwriter.close();
+fwriter2.close();
 ```
 
 
@@ -1369,7 +1409,14 @@ String curpath = getCurrentDirPath();System.out.println(curpath);FileWriter fwri
 #### 使用字符流实现文本文件的拷贝处理
 
 ```java
-FileReader fr = new FileReader(cpath + "/staticStuffs/test.words.txt");FileWriter fw = new FileWriter(cpath + "/staticStuffs/test.words.copy2.txt");char[] buff = new char[1024];int temp = 0;while ((temp = fr.read(buff)) != -1) {    fw.write(buff, 0, temp);}fw.flush();
+FileReader fr = new FileReader(cpath + "/staticStuffs/test.words.txt");
+FileWriter fw = new FileWriter(cpath + "/staticStuffs/test.words.copy2.txt");
+char[] buff = new char[1024];
+int temp = 0;
+while ((temp = fr.read(buff)) != -1) {    
+    fw.write(buff, 0, temp);
+}
+fw.flush();
 ```
 
 
@@ -1379,7 +1426,12 @@ FileReader fr = new FileReader(cpath + "/staticStuffs/test.words.txt");FileWrite
 可以**按行为单位**进行读取文件
 
 ```java
-FileReader fr = new FileReader(cpath + "/staticStuffs/testwords.txt");BufferedReader bfr = new BufferedReader(fr);String temp = "";while ((temp = bfr.readLine()) != null) {    System.out.println(temp);}
+FileReader fr = new FileReader(cpath + "/staticStuffs/testwords.txt");
+BufferedReader bfr = new BufferedReader(fr);
+String temp = "";
+while ((temp = bfr.readLine()) != null) {    
+    System.out.println(temp);
+}
 ```
 
 
@@ -1389,7 +1441,15 @@ FileReader fr = new FileReader(cpath + "/staticStuffs/testwords.txt");BufferedRe
 BufferedWriter有个newLine()的方法，可以代替之前使用```\r\n```来添加一个换行符
 
 ```java
-FileWriter fw = new FileWriter("mytest.txt");BufferedWriter bfw = new BufferedWriter(fw);bfw.write("Good day today!");bfw.newLine(); // 添加一个换行符bfw.write("To be or not to be");bfw.newLine(); // 添加一个换行符bfw.flush();bfw.close();fw.close();
+FileWriter fw = new FileWriter("mytest.txt");
+BufferedWriter bfw = new BufferedWriter(fw);
+bfw.write("Good day today!");
+bfw.newLine(); // 添加一个换行符
+bfw.write("To be or not to be");
+bfw.newLine(); // 添加一个换行符
+bfw.flush();
+bfw.close();
+fw.close();
 ```
 
 
@@ -1397,7 +1457,19 @@ FileWriter fw = new FileWriter("mytest.txt");BufferedWriter bfw = new BufferedWr
 #### 使用字符缓冲流实现文本文件的拷贝处理
 
 ```java
-String cpath = testUtils.getCurrentDirPath();String fname = cpath + "/staticStuffs/testwords.txt";String fout = cpath + "/staticStuffs/testwords.txt.copy";BufferedReader br = new BufferedReader(new FileReader(fname));BufferedWriter bw = new BufferedWriter(new FileWriter(fout));String strtmp = "";while ((strtmp = br.readLine()) != null) {    bw.write(strtmp);    bw.newLine();}bw.flush();bw.close();br.close();
+String cpath = testUtils.getCurrentDirPath();
+String fname = cpath + "/staticStuffs/testwords.txt";
+String fout = cpath + "/staticStuffs/testwords.txt.copy";
+BufferedReader br = new BufferedReader(new FileReader(fname));
+BufferedWriter bw = new BufferedWriter(new FileWriter(fout));
+String strtmp = "";
+while ((strtmp = br.readLine()) != null) {    
+    bw.write(strtmp);    
+    bw.newLine();
+}
+bw.flush();
+bw.close();
+br.close();
 ```
 
 
@@ -1409,7 +1481,19 @@ String cpath = testUtils.getCurrentDirPath();String fname = cpath + "/staticStuf
 场景：比如System.in是System下面的一个static 变量in，类型是InputStream，而键盘输入就是InputStream，所以如果要把键盘输入的字节转换成（一行）字符，就要用到转换流InputStremReader。同时System.out是System下面的一个static 变量out，类型是OutputStream，如果要把一行字符显示到控制台，就要用到字符流的write(String str)方法，OutputStreamWriter。
 
 ```java
-// System.in is type 'InputStream'// but BufferedRead accepts the char stream// So use InputStreamRead/* BufferedReader接收的是字符输入流，但System.in是InputStream类型，即字节输入流，所以需要 * InputStreamReader这个转换流。 * BufferedWriter接收的是字符输出流，但System.out是OutputStream类型，即字节输出流，所以需要 * OutputStreamWriter这个转换流。*/BufferedReader br = new BufferedReader(new InputStreamReader(System.in));String input = br.readLine();BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));bw.write(input);bw.flush();bw.close();br.close();
+// System.in is type 'InputStream'// but BufferedRead accepts the char stream
+// So use InputStreamRead
+/* BufferedReader接收的是字符输入流，但System.in是InputStream类型，即字节输入流，所以需要 
+ * InputStreamReader这个转换流。 
+ * BufferedWriter接收的是字符输出流，但System.out是OutputStream类型，即字节输出流，所以需要 
+ * OutputStreamWriter这个转换流。*/
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+String input = br.readLine();
+BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+bw.write(input);
+bw.flush();
+bw.close();
+br.close();
 ```
 
 ### 字符输出流
@@ -1419,7 +1503,17 @@ java.io中提供的字符输出流对象**```PrintWriter```**，可自动换行�
 特点是可以按行写出字符串，通过**println()**方法实现自动换行。
 
 ```java
-String cpath = testUtils.getCurrentDirPath();String fn = cpath + "/staticStuffs/testwords.txt";String fn1 = cpath + "/staticStuffs/testwords2.txt";BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fn)));PrintWriter pw = new PrintWriter(fn1);String temp = "";while ((temp = br.readLine()) != null) {    pw.println(temp);}br.close();pw.close();
+String cpath = testUtils.getCurrentDirPath();
+String fn = cpath + "/staticStuffs/testwords.txt";
+String fn1 = cpath + "/staticStuffs/testwords2.txt";
+BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fn)));
+PrintWriter pw = new PrintWriter(fn1);
+String temp = "";
+while ((temp = br.readLine()) != null) {    
+    pw.println(temp);
+}
+br.close();
+pw.close();
 ```
 
 
@@ -1440,7 +1534,15 @@ String cpath = testUtils.getCurrentDirPath();String fn = cpath + "/staticStuffs/
 它的构造函数里面需要一个**字节数组**参数，这个字节数组就是数据源
 
 ```java
-byte [] arr = "abcdefg".getBytes();StringBuffer sb = new StringBuffer();ByteArrayInputStream bis = new ByteArrayInputStream(arr);int temp = 0;while ((temp = bis.read()) != -1) {    sb.append((char) temp);}System.out.println(sb.toString());bis.close();
+byte [] arr = "abcdefg".getBytes();
+StringBuffer sb = new StringBuffer();
+ByteArrayInputStream bis = new ByteArrayInputStream(arr);
+int temp = 0;
+while ((temp = bis.read()) != -1) {    
+    sb.append((char) temp);
+}
+System.out.println(sb.toString());
+bis.close();
 ```
 
 
@@ -1450,7 +1552,15 @@ byte [] arr = "abcdefg".getBytes();StringBuffer sb = new StringBuffer();ByteArra
 **ByteArrayOutputStream**把**流中的数据**写入到**字节数组**中，这个字节数组是**ByteArrayOutputStream**的对象的内部的变量（字节数组），可以通过ByteArrayOutputStream.**toByteArray()**这个方法来获取
 
 ```java
-ByteArrayOutputStream bos = new ByteArrayOutputStream();bos.write('g');bos.write('o');bos.write('o');bos.write('d');byte [] arr = bos.toByteArray();for (byte c : arr) {    System.out.println((char) c);}
+ByteArrayOutputStream bos = new ByteArrayOutputStream();
+bos.write('g');
+bos.write('o');
+bos.write('o');
+bos.write('d');
+byte [] arr = bos.toByteArray();
+for (byte c : arr) {    
+    System.out.println((char) c);
+}
 ```
 
 
@@ -1486,7 +1596,27 @@ ByteArrayOutputStream bos = new ByteArrayOutputStream();bos.write('g');bos.write
 下面这个例子同时示意了如何使用**数据输出流**和**数据输入流**
 
 ```java
-String cpath = testUtils.getCurrentDirPath();String fn = cpath + "/staticStuffs/dataIoStreamTest.txt";DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(fn)));dos.writeDouble(3.1415926);dos.writeUTF("Pyrad"); // 写字符串dos.writeChar('x');dos.writeInt(1024);dos.writeBoolean(false);dos.flush();dos.close();// 之前是按照什么顺序写出的，就要按照相应的顺序读入DataInputStream dis = new DataInputStream(new BufferedInputStream(new FileInputStream(fn)));double v0 = dis.readDouble();String v1 = dis.readUTF();char v2 = dis.readChar();int v3 = dis.readInt();boolean v4 = dis.readBoolean();dis.close();
+String cpath = testUtils.getCurrentDirPath();
+String fn = cpath + "/staticStuffs/dataIoStreamTest.txt";
+DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(fn)));
+dos.writeDouble(3.1415926);
+dos.writeUTF("Pyrad"); // 写字符串
+dos.writeChar('x');
+dos.writeInt(1024);
+dos.writeBoolean(false);
+
+dos.flush();
+dos.close();
+
+// 之前是按照什么顺序写出的，就要按照相应的顺序读入
+DataInputStream dis = new DataInputStream(new BufferedInputStream(new FileInputStream(fn)));
+double v0 = dis.readDouble();
+String v1 = dis.readUTF();
+char v2 = dis.readChar();
+int v3 = dis.readInt();
+boolean v4 = dis.readBoolean();
+
+dis.close();
 ```
 
 
