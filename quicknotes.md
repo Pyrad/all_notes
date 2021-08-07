@@ -83,3 +83,11 @@ https://blog.csdn.net/Dreamhai/article/details/109842184
 https://www.jianshu.com/p/058440ed14df
 
 https://zhuanlan.zhihu.com/p/380889131
+
+
+
+
+
+# Gitee笔记首页示例
+
+http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/object-oriented-vs-procedure-oriented
