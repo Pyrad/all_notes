@@ -67,9 +67,19 @@ vscode.cdn.azure.cn <--------就是左边这个
 
 官网：https://www.vim.org/download.php
 
-# 6. msys2
+# msys2
 
 https://github.com/msys2/msys2-installer/releases
 https://mirrors.tuna.tsinghua.edu.cn/help/msys2/
 MSYS2使用教程
 https://blog.csdn.net/Dreamhai/article/details/109842184
+
+
+
+
+
+# How-to ReadTheDoc articles
+
+https://www.jianshu.com/p/058440ed14df
+
+https://zhuanlan.zhihu.com/p/380889131
