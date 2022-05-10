@@ -62,7 +62,7 @@ go install golang.org/x/website/tour@latest
 
 
 
-## Chapter 2 Packages
+## Chapter 2 Packages, variables and functions
 
 ### 包 （Packages）
 
@@ -224,5 +224,62 @@ go install golang.org/x/website/tour@latest
 
 
 
+## Chapter 3 Flow control statements: for, if, else, switch and defer
+
+### for
+
+- Go只有`for`这一种循环
+
+- `for`循环由三部分组成，用分号隔开，但这三个部分不用小括号括起来
+
+  - 初始化语句（类似C/C++中，可以省略）
+  - 条件表达式
+  - 后置语句（类似C/C++中，可以省略）
+
+- 当`for`循环省略了初始化语句和后置语句，这时候就可以去掉分号，相当于Go中的`while`循环
+
+- xxx
+
+  ```go
+  // 基本的for循环
+  sum := 0
+  for i := 0; i < 10; i++ {
+  	sum += i
+  }
+  
+  // 省略初始化语句和后置语句的for循环
+  sum := 1
+  for ; sum < 1000; {
+  	sum += sum
+  }
+  
+  // 省略初始化语句和后置语句的for循环，可以去掉分号
+  sum := 1
+  for sum < 1000 {
+  	sum += sum
+  }
+  
+  // 无限循环（死循环）
+  for {
+  }
+  ```
+
+### if
+
+- xxx
+- xxx
+- 
 
 
+
+
+
+
+
+
+
+
+
+> Started 2022-May-10 23:25
+>
+> End 2022-May-10 23:29
