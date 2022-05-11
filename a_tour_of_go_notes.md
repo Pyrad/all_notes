@@ -264,22 +264,103 @@ go install golang.org/x/website/tour@latest
   }
   ```
 
-### if
-
-- xxx
-- xxx
-- 
-
-
-
-
-
-
-
-
-
 
 
 > Started 2022-May-10 23:25
 >
 > End 2022-May-10 23:29
+
+
+
+### if
+
+- 和`for`循环类似，`if`后面的表达式不用小括号，但是更后面的执行语句块必须用大括号
+
+- `if`语句可以在条件表达式前加一个简单语句（和表达式语句用分号`;`隔开），里面声明的变量仅在`if`语句块内有效
+
+  ```go
+  // 基本的if语句
+  if x < 0 {
+  	return sqrt(-x) + "i"
+  } else {
+      return x
+  }
+  
+  // if表达式前面的简单语句，
+  if v := math.Pow(x, n); v < lim {
+  	return v
+  }
+  ```
+
+
+
+### switch
+
+- `switch`语句无需再每个case语句后面加上`break`，因为Go会自动提供`break`，以便自动结束分支执行
+
+- `switch`的后面的变量同样不用小括号
+
+- `switch`的后面的变量前面可以加入一个简单的语句，作用域仅限于该`switch`语句
+
+- `switch`语句的case不仅限于常量或整数，其他类型也可以
+
+- `switch`后面也可以不加条件，此时等价于`switch true`
+
+  ```go
+  // 基本的switch语句（例子1）
+  switch os := runtime.GOOS; os {
+  	case "darwin":
+  		fmt.Println("OS X.")
+  	case "linux":
+  		fmt.Println("Linux.")
+  	default:
+  		// freebsd, openbsd,
+  		// plan9, windows...
+  		fmt.Printf("%s.\n", os)
+  }
+  
+  // 基本的switch语句（例子2）
+  today := time.Now().Weekday()
+  	switch time.Saturday {
+  	case today + 0:
+  		fmt.Println("Today.")
+  	case today + 1:
+  		fmt.Println("Tomorrow.")
+  	case today + 2:
+  		fmt.Println("In two days.")
+  	default:
+  		fmt.Println("Too far away.")
+  }
+  ```
+
+  
+
+### defer
+
+- `defer`后面**必须**跟的是函数，不能是简单的语句
+
+- `defer`后面的函数会在`defer`所在的函数返回之后再执行，但是其参数会立即求值
+
+- `defer`的函数会被依次压入堆栈，当外层函数返回后，`defere`的函数会按**后进先出**的顺序调用
+
+  ```go
+  // 最后打印出来的顺序是Hello, world!
+  func print() {
+      defer fmt.Println("world!)
+      fmt.Println("Hello, ")
+  }
+  
+  // defer的函数按照后进先出的顺序，在外层函数返回后被依次调用
+  // 下面的打印结果是（->表示另起一行）:
+  // counting->done->9->8->7->6->5->4->3->2->1->0
+  
+  func print() {
+      fmt.Println("counting")
+  	for i := 0; i < 10; i++ {
+  		defer fmt.Println(i)
+  	}
+  	fmt.Println("done")
+  }
+  ```
+
+  
