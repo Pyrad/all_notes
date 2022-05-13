@@ -561,18 +561,6 @@ go install golang.org/x/website/tour@latest
     }
     ```
 
-  - 
-
-- xx
-
-- xx
-
-- xx
-
-- xx
-
-- xx
-
 - 可以阅读文章，[Go 切片：用法和本质](https://blog.go-zh.org/go-slices-usage-and-internals)
 
   ```go
@@ -674,6 +662,66 @@ go install golang.org/x/website/tour@latest
   ```
 
   
+
+### Map
+
+- 就是键值对
+
+- 映射的零值是`nil`，它无键无值
+
+- 声明一个映射：`var <name> map[keyType]ValueType`
+
+  - 比如`var m map[int]string`
+
+- 可以用`make`函数创建映射
+
+  - `make(map[keyType]ValueType)`
+
+- 映射常量
+
+  - 类似结构体，需要写键名，键和值直接用冒号`:`隔开
+
+  - ```go
+    type Vertex struct {Lat, Long float64}
+    var m = map[string]Vertex{
+    	"Bell Labs": Vertex{40.68433, -74.39967,},
+    	"Google": Vertex{37.42202, -122.08408,},
+    }
+    ```
+
+  - 
+
+- xx
+
+- xx
+
+- xx
+
+- xx
+
+- xx
+
+- xx
+
+- xx
+
+- xx
+
+  ```go
+  type Vertex struct {
+  	Lat, Long float64
+  }
+  var m map[string]Vertex
+  m = make(map[string]Vertex)
+  m["Bell Labs"] = Vertex{40.68433, -74.39967,}
+  fmt.Println(m["Bell Labs"])
+  ```
+
+  
+
+
+
+
 
 
 
