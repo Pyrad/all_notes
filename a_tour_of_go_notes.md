@@ -1130,11 +1130,44 @@ go install golang.org/x/website/tour@latest
   func describe(i I) { fmt.Printf("(%v, %T)\n", i, i) }
   ```
 
-- xx
+### Type assertions（类型断言）
 
-- xx
+- **类型断言**可以访问接口值底层具体值
 
-- xx
+  - `t := i.(T)`
+
+    该语句断言接口值`i`保存了具体类型`T`，并把底层类型为`T`的值赋予变量`t`
+
+    如果接口值`i`没有保存类型`T`的值，就会触发恐慌（panic）
+
+- **类型断言**也可以返回两个值：其底层值以及一个报告断言是否成功的布尔值。
+
+  - `t, ok := i.(T)`
+
+    如果 `i` 保存了一个 `T`类型，那么 `t` 将会是其底层值，而 `ok` 为 `true`。
+
+    否则，`ok` 将为 `false` 而 `t` 将为 `T` 类型的零值，程序并不会产生恐慌。
+
+  ```go
+  package main
+  import "fmt"
+  
+  func main() {
+  	var i interface{} = "hello"
+  
+  	s := i.(string)
+  	fmt.Println(s) // hello
+  
+  	s, ok := i.(string)
+  	fmt.Println(s, ok) // hello true
+  
+  	f, ok := i.(float64)
+  	fmt.Println(f, ok) // 0 false
+  
+  	f = i.(float64) // 报错(panic)
+  	fmt.Println(f)
+  }
+  ```
 
 - xx
 
