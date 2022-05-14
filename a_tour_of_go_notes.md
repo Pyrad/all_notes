@@ -90,7 +90,7 @@ go install golang.org/x/website/tour@latest
 
 - 导入一个包时，只能使用其中已经导出的名字（变量/函数），而所谓导出，指包中变量/函数名如果是大写字母开头，那么它是导出的，否则就不是导出的。
 
-### 函数
+### 函数（functions）
 
 - 以关键字`func`开头，然后跟上函数名，再跟上函数列表（用圆括号括起来）
 
@@ -131,7 +131,7 @@ go install golang.org/x/website/tour@latest
 
 
 
-### 变量
+### 变量（variable）
 
 - `var`用来声明一个变量或者一个变量列表，同样的，类型放在最后面
 
@@ -367,7 +367,7 @@ go install golang.org/x/website/tour@latest
 
 ## Chapter 4 More types: structs, slices, and maps
 
-### Pointers
+### Pointers（指针）
 
 - Go是有指针的，和C一样，它保存值的内存地址
 
@@ -394,13 +394,18 @@ go install golang.org/x/website/tour@latest
 
 
 
-### Struct
+### Struct（结构）
 
 - 一个结构体就是一组字段（A `struct` is a collection of fields）
 
 - 定义结构体，以关键字`type`开头，跟上结构体名字，再跟上关键字`struct`，后面是大括号括起来的一组字段（field）
 
 - 结构体中的字段用点号`.`访问
+
+- 注意，如果要在函数体外面初始化结构体，只能用以下办法
+
+  - 一次性定义并全部赋值
+  - 先声明变量，然后在某个函数内部进行赋值
 
 - 如果有一个结构体指针（比如p指向一个结构体对象），那么字段也通过点号访问，
 
@@ -409,17 +414,20 @@ go install golang.org/x/website/tour@latest
 
 - 分配结构体时，通过直接列出字段的值来分配一个结构体
 
-  - `var v Vertext{1, 2}`
+  - `var v = Vertext{1, 2}`
+  - `var v Vertex = Vertext{1, 2}`
   - `v := Vertex{1, 2}`
-  
+  - `var v Vertex`
+    `v = Vertex{1, 2}`
+
 - 可以只列出一部分字段的值，另一部分字段用字段名代替，表示使用其类型对应的零值
   -   `v := Vertex{X, 1}`  X字段的值默认为0(结构体定义见如下)
   -   `v := Vertex{}` X和Y的值默认为0(结构体定义见如下)
-  
+
 - 可以通过`&`前缀来直接返回一个结构体指针
 
   - `p := &Vertex{3, 4}`
-  
+
   ```go
   // 结构体定义
   type Vertex struct {
@@ -431,10 +439,16 @@ go install golang.org/x/website/tour@latest
   	X, Y int
   }
   
-  // 定义结构体的文法
-  var v Vertex{1, 2}
+  // 定义结构体的文法几种办法
+  var v Vertex = Vertex{1, 2}
+  // 或者
+  var v = Vertex{1, 2}
   // 或者
   v := Vertex{1, 2}
+  // 先声明后赋值
+  var v Vertex
+  v = Vertex{1, 2}
+  
   
   // 定义结构体的对象，并用点号访问
   v := Vertex{1, 2}
@@ -446,16 +460,18 @@ go install golang.org/x/website/tour@latest
   p.X = 1e9
   
   // 
-  v1 = Vertex{1, 2}  // 创建一个 Vertex 类型的结构体
-  v2 = Vertex{X: 1}  // Y:0 被隐式地赋予
-  v3 = Vertex{}      // X:0 Y:0
-  p  = &Vertex{1, 2} // 创建一个 *Vertex 类型的结构体（指针）
+  var (
+  	v1 = Vertex{1, 2}  // 创建一个 Vertex 类型的结构体
+  	v2 = Vertex{X: 1}  // Y:0 被隐式地赋予
+  	v3 = Vertex{}      // X:0 Y:0
+  	p  = &Vertex{1, 2} // 创建一个 *Vertex 类型的结构体（指针）
+  )
   ```
-  
 
 
 
-### Array
+
+### Array（数组）
 
 - 类型`[n]T`表示一个有n个T类型值的数组
 
@@ -480,7 +496,7 @@ go install golang.org/x/website/tour@latest
 
   
 
-### Slice
+### Slice（切片）
 
 - 切片给数组提供动态大小的、灵活的视角（dynamically-sized, flexible view into elements of an array）
 
@@ -663,7 +679,7 @@ go install golang.org/x/website/tour@latest
 
   
 
-### Map
+### Map（映射）
 
 - 就是键值对
 
@@ -677,37 +693,43 @@ go install golang.org/x/website/tour@latest
 
   - `make(map[keyType]ValueType)`
 
-- 映射常量
+- 映射文法（定义）
 
   - 类似结构体，需要写键名，键和值直接用冒号`:`隔开
 
-  - ```go
+  - 如果top-level的类型只是一个类型名，可以在文法元素中省略，比如这里的Vertex
+
+  ```go
     type Vertex struct {Lat, Long float64}
     var m = map[string]Vertex{
     	"Bell Labs": Vertex{40.68433, -74.39967,},
     	"Google": Vertex{37.42202, -122.08408,},
     }
-    ```
-
+    // 或者可以写成
+    var m map[string]Vertex = map[string]Vertex{
+    	"Bell Labs": Vertex{40.68433, -74.39967,},
+    	"Google": Vertex{37.42202, -122.08408,},
+    }
+    // 或者可以写成
+    var m = map[string]Vertex{
+    	"Bell Labs": {40.68433, -74.39967,},
+    	"Google": {37.42202, -122.08408,},
+    }
+  ```
+  
   - 
 
-- xx
+- 映射元素的增删查改
 
-- xx
+  - 插入元素，或者也可以修改元素：`m[key] = elem`
+  - 获取元素：`elem = m[key]`
+  - 删除元素：`delete(m, key)`
+  - 检查键是否存在（通过双赋值）：`elem, ok = m[key]`
+    如果`key`在`m`中，`ok`为`true`，否则`ok`为`false`
+    如果`key`不在`m`中，那么`elem`为该映射元素类型的零值
+    如果`elem`或`ok`还未声明，那么可以使用短变量声明：`elem, ok := m[key]`
 
-- xx
-
-- xx
-
-- xx
-
-- xx
-
-- xx
-
-- xx
-
-  ```go
+   ```go
   type Vertex struct {
   	Lat, Long float64
   }
@@ -715,11 +737,90 @@ go install golang.org/x/website/tour@latest
   m = make(map[string]Vertex)
   m["Bell Labs"] = Vertex{40.68433, -74.39967,}
   fmt.Println(m["Bell Labs"])
-  ```
+   ```
 
   
 
 
+### Function values（函数值）
+
+- 函数也是值。它们可以像其它值一样传递。（有点像C++中的functor，或者函数指针）
+
+- 函数值可以用作函数的参数或返回值。
+
+  - 函数当做参数传递时，写的办法如下：
+    `ArgName func(Arg0Type, Arg1Type, ...) returnType`
+
+- 在这里也可以看到，函数里面也可以定义函数
+
+- Go 函数可以是一个闭包。
+
+  - 闭包是一个函数值，它引用了其函数体之外的变量。
+  - 该函数可以访问并赋予其引用的变量的值，换句话说，该函数被这些变量“绑定”在一起。
+  - 比如下面的函数`adder`，它返回的不是一个具体的值，而是一个闭包，它既引用了外部的变量，又操作该闭包里面的变量，而且各闭包里面的变量是属于各自的闭包的（不共享）
+
+- xxx
+
+- xxx
+
+- xxx
+
+  ```go
+  // -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+  func compute(fn func(float64, float64) float64) float64 {
+  	return fn(3, 4)
+  }
+  
+  func compute2(fn func(float64, float64) float64) float64 {
+  	myc := func(x, y float64) float64 { return x + y }
+  	return fn(1, 2) + myc(3, 4)
+  }
+  
+  func main() {
+  	hypot := func(x, y float64) float64 {
+  		return math.Sqrt(x*x + y*y)
+  	}
+  	fmt.Println(hypot(5, 12))
+  
+  	fmt.Println(compute(hypot))
+  	fmt.Println(compute(math.Pow))
+      
+     	fmt.Println(compute2(hypot))
+  }
+  
+  // -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+  
+  func adder() func(int) int {
+  	sum := 0
+  	return func(x int) int {
+  		sum += x
+  		return sum
+  	}
+  }
+  
+  func main() {
+  	pos, neg := adder(), adder()
+  	for i := 0; i < 10; i++ {
+  		fmt.Println(
+  			pos(i),
+  			neg(-2*i),
+  		)
+  	}
+  }
+  // Results
+  // 0 0
+  // 1 -2
+  // 3 -6
+  // 6 -12
+  // 10 -20
+  // 15 -30
+  // 21 -42
+  // 28 -56
+  // 36 -72
+  // 45 -90
+  ```
+
+  
 
 
 
