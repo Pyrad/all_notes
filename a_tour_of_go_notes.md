@@ -81,6 +81,9 @@ go install golang.org/x/website/tour@latest
       "math"
   )
   
+  // 也可以写成
+  import("fmt"; "math")
+  
   // 常规导入
   import "fmt"
   import "math"
@@ -134,6 +137,9 @@ go install golang.org/x/website/tour@latest
 ### 变量（variable）
 
 - `var`用来声明一个变量或者一个变量列表，同样的，类型放在最后面
+
+  - `var i int`（一般地声明）
+  - `var i = 3`（如果直接在声明的时候初始化，其实还可以省略类型）
 
 - 变量声明可以包含初始值，每个变量对应一个
 
@@ -824,7 +830,321 @@ go install golang.org/x/website/tour@latest
 
 
 
+## Chapter 5 Methods and interfaces
 
+### Methods（方法）
+
+- Go没有类，不能直接在`struct`里面定义类的方法，但还是可以定义结构体类型的方法
+
+- 方法就是一类带特殊的 **接收者（receiver）** 参数的函数
+
+- 基本可以理解为在`struct`外面为其定义方法
+
+- 方法接收者在函数的参数列表里，位于`func`关键字和方法名之间
+
+  - `func (v T) name(...) rType`
+  - 一般的值接收者在方法内部不会改变原有的接收者（因为值传递），但指针接收者可以改变（见下）
+
+- 下面的例子表明`Abs`有一个名字叫`v`，类型为`Vertex`的接收者，有名字`v`是因为在方法里面要使用这个变量
+
+  ```go
+  type Vertex struct {X, Y float64}
+  // v Vertex是一个receiver，相当于形参，相当于给Vertex这个结构加上了一个方法
+  func (v Vertex) Abs() float64 {
+  	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+  }
+  
+  func main() {
+  	v := Vertex{3, 4}
+  	fmt.Println(v.Abs())
+      k := Vertex{5, 6}
+  	fmt.Println(k.Abs())
+  }
+  ```
+
+- 类似地，可以给非结构体定义方法，但不能给内建类型声明方法
+
+- 声明了方法的接收者类型必须在同一个包里面，不能给其他包内的类型定义方法
+
+  - 就是接收者的类型定义和方法声明必须在同一包内；不能为内建类型声明方法
+
+  ```go
+  package main
+  import("fmt"; "math")
+  
+  type MyFloat float64
+  func (f MyFloat) Abs() float64 {
+  	if f < 0 {
+  		return float64(-f)
+  	}
+  	return float64(f)
+  }
+  func main() {
+  	f := MyFloat(-math.Sqrt2)
+  	fmt.Println(f.Abs())
+  }
+  ```
+
+- 更有用的是**指针接收者（pointer receiver）**
+
+  - 声明的时候在类型`T`前面加上`*`即可，其余和普通的值接收者相同：`func (v *T) name(...) rType`
+  - 有用是因为可以修改指针接收者所引用的值
+
+  ```go
+  package main
+  import("fmt"; "math")
+  
+  type Vertex struct {X, Y float64}
+  
+  func (v Vertex) Abs() float64 {
+  	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+  }
+  
+  // 如果去掉这里的*号，那么最后的结果就是5，而不是50了，因为值接收者不改变原始的值（因为值传递）
+  // 接收者是指针，那么方法被调用时，接收者既可以是值又可以是指针
+  func (v *Vertex) Scale(f float64) {
+  	v.X = v.X * f
+  	v.Y = v.Y * f
+  }
+  
+  func main() {
+  	v := Vertex{3, 4}
+  	v.Scale(10)
+  	fmt.Println(v.Abs()) // 50
+  }
+  ```
+
+- 方法与指针**重定向（indirection）**
+
+  - 如果接收者是指针的话，对应的方法被调用是，接收者既可以是值又可以是指针
+    （如果函数的参数是指针的话，那么它必须接收一个指针）
+  - 如果接收者是值的话，对应的方法被调用是，接收者既可以是值又可以是指针
+    （如果函数的参数是值的话，那么它必须接收值）
+  - 总结起来就是：**接收者不管是值还是指针，被调用时，接收者既可以是值又可以是指针**
+
+  ```go
+  type Vertex struct {X, Y float64}
+  // 接收者是值，那么方法被调用时，接收者既可以是值又可以是指针
+  func (v Vertex) Abs() float64 {	return math.Sqrt(v.X*v.X + v.Y*v.Y)}
+  // 接收者是指针，那么方法被调用时，接收者既可以是值又可以是指针
+  func (v *Vertex) Scale(f float64) {
+  	v.X = v.X * f
+  	v.Y = v.Y * f
+  }
+  
+  func main() {
+  	v := Vertex{3, 4}
+  	v.Scale(10)
+  	fmt.Println(v.Abs()) // 50
+      p := &v
+      p.Scale(10)
+      fmt.Println(v.Abs()) // 50
+      
+      k := Vertex{3, 4}
+      s := &k
+      fmt.Println(k.Abs()) // 5
+      fmt.Println(s.Abs()) // 5
+  }
+  
+  ```
+
+- 为什么使用指针接收者？
+
+  - 方法能够修改其接收者指向的值。
+  - 可以在每次调用方法时避免复制该值（若值的类型为大型结构体时，会更加高效）
+
+### Interfaces（接口）
+
+- **接口类型** 是由一组方法签名定义的集合（An *interface type* is defined as a set of method signatures）
+
+- 接口类型的变量可以保存任何实现了这些方法的值。
+
+  - 就是说，如果要赋值给一个接口类型变量，那么它必须已经实现了接口类型里面的方法
+  - 也就是说，如果要赋值给一个接口类型变量，它必须有一个对应的接收者的方法
+  - 接口类型的变量可以调用其所声明的方法（已实现）
+
+  ```go
+  package main
+  import ("fmt"; "math")
+  type Abser interface {	Abs() float64}
+  
+  func main() {
+  	var a Abser
+  	f := MyFloat(-math.Sqrt2)
+  	v := Vertex{3, 4}
+  
+  	a = f  // a MyFloat 实现了 Abser
+  	a = &v // a *Vertex 实现了 Abser
+  
+  	// 下面一行，v 是一个 Vertex（而不是 *Vertex）
+  	// 所以没有实现 Abser。
+  	a = v
+  
+  	fmt.Println(a.Abs())
+  }
+  
+  type MyFloat float64
+  
+  func (f MyFloat) Abs() float64 {
+  	if f < 0 {	return float64(-f)	}
+  	return float64(f)
+  }
+  
+  type Vertex struct {X, Y float64}
+  
+  func (v *Vertex) Abs() float64 { return math.Sqrt(v.X*v.X + v.Y*v.Y) }
+  ```
+
+- 接口声明可以只是声明了该类型应该有的所有方法，而接口的实现方法，就是带有接收者的方法，它可以出现在任何包中，这样（隐式）接口和接口的实现二者分开了，解耦了。
+
+  ```go
+  package main
+  import "fmt"
+  
+  type I interface {	M()	} // 一个接口类型
+  type T struct {	S string } // 一个struct
+  // 此方法表示类型 T 实现了接口 I，但我们无需显式声明此事。
+  func (t T) M() { fmt.Println(t.S) }
+  
+  func main() {
+  	var i I = T{"hello"}
+  	i.M()
+  }
+  
+  ```
+
+- 接口也是值。它们可以像其它值一样传递
+
+- 接口值可以用作函数的参数或返回值
+
+- 在内部，接口值可以看做包含值和具体类型的元组：`(value, type)`
+
+- 接口值保存了一个具体底层类型的具体值。
+
+- 接口值调用方法时会执行其底层类型的同名方法。
+
+  ```go
+  package main
+  import ("fmt"; "math")
+  
+  type I interface {	M()	} // 一个接口类型
+  type T struct {	S string } // 一个struct
+  
+  func (t *T) M() { fmt.Println(t.S) }
+  type F float64
+  func (f F) M() { fmt.Println(f) }
+  
+  func main() {
+  	var i I
+  
+  	i = &T{"Hello"}
+  	describe(i) // (&{Hello}, *main.T)
+  	i.M() // Hello
+  
+  	i = F(math.Pi)
+  	describe(i) // (3.141592653589793, main.F)
+  	i.M() // 3.141592653589793
+  }
+  
+  func describe(i I) { fmt.Printf("(%v, %T)\n", i, i) }
+  
+  ```
+
+- 即便接口内的具体值为 `nil`，方法仍然会被` nil` 接收者调用。
+
+  - 比如说已经实现了一个指针接收者方法；现在赋值给一个接口的是一个空指针`nil`，那么接口的方法依然可以调用，而不会像其他语言中一样触发指针异常，但可以在接口内处理它
+
+  ```go
+  package main
+  import ("fmt"; "math")
+  
+  type I interface {	M()	} // 一个接口类型
+  type T struct {	S string } // 一个struct
+  
+  func (t *T) M() {
+  	if t == nil {
+  		fmt.Println("<nil>")
+  		return
+  	}
+  	fmt.Println(t.S)
+  }
+  
+  func main() {
+  	var i I // 接口i目前本身是nil
+  
+  	var t *T // t现在的默认值是nil
+  	i = t // 经过赋值，现在i实际上包含了nil，但它本身并不是nil
+  	describe(i) // (<nil>, *main.T)
+  	i.M() // <nil>
+  
+  	i = &T{"hello"}
+  	describe(i) // (&{hello}, *main.T)
+  	i.M() // hello
+  }
+  
+  func describe(i I) { fmt.Printf("(%v, %T)\n", i, i) }
+  
+  
+  ```
+
+- nil 接口值既不保存值也不保存具体类型。
+
+- 为 nil 接口调用方法会产生运行时错误，因为接口的元组内并未包含能够指明该调用哪个 **具体** 方法的类型。
+
+  ```go
+  package main
+  import ("fmt"; "math")
+  
+  type I interface {	M()	}
+  
+  func main() {
+  	var i I
+  	describe(i) // (<nil>, <nil>)
+  	i.M() // ! panic: runtime error: invalid memory address or nil pointer dereference
+  }
+  
+  func describe(i I) { fmt.Printf("(%v, %T)\n", i, i) }
+  ```
+
+- 空接口
+
+  - 指定了零个方法的接口值被称为 **空接口***：`interface {}`
+  - 空接口可保存任何类型的值。（因为每个类型都至少实现了零个方法。）
+  - 空接口被用来处理未知类型的值。例如，`fmt.Print` 可接受类型为 `interface{}` 的任意数量的参数。
+
+  ```go
+  package main
+  import "fmt"
+  
+  func main() {
+  	var i interface{}
+  	describe(i) // (<nil>, <nil>)
+  
+  	i = 42
+  	describe(i) // (42, int)
+  
+  	i = "hello"
+  	describe(i) // (hello, string)
+  }
+  
+  func describe(i I) { fmt.Printf("(%v, %T)\n", i, i) }
+  ```
+
+- xx
+
+- xx
+
+- xx
+
+- xx
+
+- xx
+
+- xx
+
+- xx
+
+  
 
 
 
