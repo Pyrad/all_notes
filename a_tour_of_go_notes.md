@@ -10,6 +10,11 @@ Notes for A Tour of Go ([link is here](https://go.dev/tour/welcome/1))
 
   学习使用本指南：包括如何在不同的课程间切换以及运行代码。
 
+- Exercise解答参考
+  - [基础部分](https://www.jeddd.com/article/a-tour-of-go-exercises-basics.html)
+  - [方法和接口部分](https://www.jeddd.com/article/a-tour-of-go-exercises-methods.html)
+  - [并发部分](https://www.jeddd.com/article/a-tour-of-go-exercises-concurrency.html)
+
 ### 基础
 
 - [Chapter 2 Packages, variables and functions](https://go.dev/tour/basics/1)
@@ -723,18 +728,28 @@ go install golang.org/x/website/tour@latest
     }
   ```
   
-  - 
+- 映射元素的**增删查改**和**遍历**
 
-- 映射元素的增删查改
-
-  - 插入元素，或者也可以修改元素：`m[key] = elem`
-  - 获取元素：`elem = m[key]`
-  - 删除元素：`delete(m, key)`
-  - 检查键是否存在（通过双赋值）：`elem, ok = m[key]`
+  - **插入**元素，或者也可以修改元素：`m[key] = elem`
+  
+  - **获取**元素：`elem = m[key]`
+  
+  - **删除**元素：`delete(m, key)`
+  
+  - **检查键**是否存在（通过双赋值）：`elem, ok = m[key]`
     如果`key`在`m`中，`ok`为`true`，否则`ok`为`false`
     如果`key`不在`m`中，那么`elem`为该映射元素类型的零值
     如果`elem`或`ok`还未声明，那么可以使用短变量声明：`elem, ok := m[key]`
-
+    
+  - **遍历**可以使用`range`
+  
+    ```go
+    mymap := make(map[int]string)
+    for mykey, myval := range mymap {
+    	fmt.Printf("%v: %v\n", mykey, myval)
+    }
+    ```
+  
    ```go
   type Vertex struct {
   	Lat, Long float64
@@ -743,8 +758,12 @@ go install golang.org/x/website/tour@latest
   m = make(map[string]Vertex)
   m["Bell Labs"] = Vertex{40.68433, -74.39967,}
   fmt.Println(m["Bell Labs"])
+  for mykey, myval := range m {
+  	fmt.Printf("%v: %v\n", mykey, myval)
+  }
+  
    ```
-
+  
   
 
 
@@ -966,7 +985,7 @@ go install golang.org/x/website/tour@latest
   ```go
   package main
   import ("fmt"; "math")
-  type Abser interface {	Abs() float64}
+  type Abser interface { Abs() float64 }
   
   func main() {
   	var a Abser
@@ -1134,7 +1153,7 @@ go install golang.org/x/website/tour@latest
 
 - **类型断言**可以访问接口值底层具体值
 
-  - `t := i.(T)`
+  - `t := i.(T)`（即`retVal := interfaceValue.(typeName)`）
 
     该语句断言接口值`i`保存了具体类型`T`，并把底层类型为`T`的值赋予变量`t`
 
@@ -1142,7 +1161,7 @@ go install golang.org/x/website/tour@latest
 
 - **类型断言**也可以返回两个值：其底层值以及一个报告断言是否成功的布尔值。
 
-  - `t, ok := i.(T)`
+  - `t, ok := i.(T)`（即`retVal, okVal := interfaceValue.(typeName)`）
 
     如果 `i` 保存了一个 `T`类型，那么 `t` 将会是其底层值，而 `ok` 为 `true`。
 
@@ -1169,15 +1188,141 @@ go install golang.org/x/website/tour@latest
   }
   ```
 
-- xx
+### Type switches（类型选择）
+
+- **类型选择** 是一种按顺序从几个类型断言中选择分支的结构
+
+- **类型选择**与一般的 `switch` 语句相似，不过类型选择中的 `case` 为类型（而非值）， 它们针对给定接口值所存储的值的类型进行比较
+
+- **类型选择**中的声明与**类型断言** `i.(T)` 的语法相同，只是具体类型 `T` 被替换成了关键字 `type`
+
+- 需要注意的是`i.(type)`只能在`switch`语句中使用，否则会报错
+
+  ```go
+  // 此选择语句判断接口值 i 保存的值类型是 T 还是 S
+  // 在 T 或 S 的情况下，变量 v 会分别按 T 或 S 类型保存 i 拥有的值
+  // 在默认（即没有匹配）的情况下，变量 v 与 i 的接口类型和值相同。
+  switch v := i.(type) { // 注意这里的type是关键字
+  case T:
+      // v 的类型为 T
+  case S:
+      // v 的类型为 S
+  default:
+      // 没有匹配，v 与 i 的类型相同
+  }
+  ```
 
 - xx
 
 - xx
 
-- xx
-
+  ```go
+  package main
+  import "fmt"
   
+  func do(i interface{}) {
+  	switch v := i.(type) {
+  	case int:
+  		fmt.Printf("Twice %v is %v\n", v, v*2)
+  	case string:
+  		fmt.Printf("%q is %v bytes long\n", v, len(v))
+  	default:
+  		fmt.Printf("I don't know about type %T!\n", v)
+  	}
+  }
+  
+  func main() {
+  	do(21) // Twice 21 is 42
+  	do("hello") // "hello" is 5 bytes long
+  	do(true) // I don't know about type bool!
+  }
+  ```
+
+### Stringer
+
+- `fmt`包中定义的`Stringer`是一个接口，实现它（对应接收者的方法）可以用字符串来描述自己的类型
+  可以看到，这个接口规定了对应接收者的方法是一个名叫`String`的方法（无参数），返回的类型是`string`
+
+  ```go
+  type Stringer interface {
+      String() string
+  }
+  ```
+
+- 例子
+
+  ```go
+  package main
+  import "fmt"
+  
+  type Person struct { Name string; Age  int }
+  
+  // 定义了Person为接收者的方法
+  func (p Person) String() string { return fmt.Sprintf("%v (%v years)", p.Name, p.Age) }
+  
+  func main() {
+  	a := Person{"Arthur Dent", 42}
+  	z := Person{"Zaphod Beeblebrox", 9001}
+  	fmt.Println(a, z)
+  }
+  
+  ```
+
+### Errors（错误）
+
+- `error` 类型是一个内建接口（和 `fmt.Stringer` 类似），用来表示错误状态
+  可以看到它需要给接收者实现一个名字叫 `Error`、返回值为 `string` 的方法
+
+  ```go
+  type error interface {
+      Error() string
+  }
+  ```
+
+- 通常函数会返回一个 `error` 值，调用的它的代码应当判断这个错误是否等于 `nil` 来进行错误处理。
+  一般地，`error` 为 `nil` 时表示成功；非 `nil` 的 `error` 表示失败。
+
+  ```go
+  i, err := strconv.Atoi("42")
+  if err != nil {
+      fmt.Printf("couldn't convert number: %v\n", err)
+      return
+  }
+  fmt.Println("Converted integer:", i)
+  ```
+
+### Reader
+
+- `io` 包指定了 `io.Reader` 接口，它表示从数据流的末尾进行读取。
+
+- `io.Reader` 接口有一个 `Read` 方法
+  `Read` **用数据填充给定的字节切片**并**返回填充的字节数和错误值**
+  在遇到数据流的结尾时，它会返回一个 `io.EOF` 错误
+
+  ```go
+  func (T) Read(b []byte) (n int, err error)
+  ```
+
+### Image（图像）
+
+- [`image`](https://go-zh.org/pkg/image/#Image) 包定义了 `Image` 接口：
+  **注意:** `Bounds` 方法的返回值 `Rectangle` 实际上是一个 [`image.Rectangle`](https://go-zh.org/pkg/image/#Rectangle)，它在 `image` 包中声明。
+
+  ```go
+  package image
+  
+  type Image interface {
+      ColorModel() color.Model
+      Bounds() Rectangle
+      At(x, y int) color.Color
+  }
+  ```
+
+
+
+
+
+
 
 
 
