@@ -71,8 +71,11 @@
 	
 	Use a tool to check the differences of files,
     ```shell
-	git difftool --tool=tkdiff
-    ```
+	# use tkdiff
+    git difftool --tool=tkdiff
+	# use meld
+	git difftool -t meld
+	```
 	
 8.	To see all the differences in current branch and master branch, use command below to output those differences,
     ```shell
