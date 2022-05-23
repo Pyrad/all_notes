@@ -114,3 +114,13 @@ fromdos <FILE>
 
 # Sphnix + reStructuredText + ReadTheDocs Tutorial
 - [Series From youtube](https://www.youtube.com/watch?v=pzzjW0Xv_gk&list=PLPDCBPbzk1AYghqYazE7Cxt3p7edml8I7&index=1)
+
+
+
+
+
+# MathJax
+
+[MathJax Documentation](https://docs.mathjax.org/en/latest/index.html)
+
+[How-to-add-MathJax in Sphinx](https://www.sphinx-doc.org/en/master/usage/extensions/math.html#module-sphinx.ext.mathjax)
