@@ -131,31 +131,3 @@ fromdos <FILE>
 
 [link2](https://www.zhihu.com/question/27478597/answer/36837839)
 
-# Vim
-
-### Vim diff
-1. 启动
-vimdiff FILE_LEFT FILE_RIGHT
-或者
-vim -d FILE_LEFT FILE_RIGHT
-2. 启动之后，两侧的文件滚动式同步的。
-跳转到下一个差异点命令  ]c
-跳转到上一个差异点命令  [c
-
-3. 文件合并命令
-（注意，当前光标所在的文件是当前文件）
-如果希望把一个差异点中当前文件的内容复制到另一个文件里，可以使用命令→ dp，这个命令的含义是diff put
-如果希望把一个差异点中另一个文件的内容复制到当前文件里，可以使用命令→ do，这个命令的含义是diff get，因为dg这个命令已经被占用，所以用了do.
-4. 打开折叠的文本行用命令→ zo，意思是folding open，用字母z是因为它像被折叠的样子。。。
-重新折叠的文本行用命令→ zc，意思是folding close
-
-
-### Vim colors
-How to tell vim how many colors your terminal could be capable of?
-t_Co=256 tells Vim that your terminal is capable of using 256 colors (whether that is correct or not). termguicolors is a relative recent addition in Vim 8 and tells Vim that your terminal is capable of handling rgb colors (e.g. 16 Million colors, whether that is correct or not)
-	
-From <https://github.com/vim-airline/vim-airline/issues/26>
-
-### Execute Vim script
-In non-interactive mode: `vim -s <cmds.file.vim> -es <file.to.modify>`
-
