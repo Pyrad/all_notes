@@ -124,3 +124,7 @@ fromdos <FILE>
 [MathJax Documentation](https://docs.mathjax.org/en/latest/index.html)
 
 [How-to-add-MathJax in Sphinx](https://www.sphinx-doc.org/en/master/usage/extensions/math.html#module-sphinx.ext.mathjax)
+
+
+# Vim frequently used commands
+[link](http://blog.chinaunix.net/uid-20769502-id-112737.html)
