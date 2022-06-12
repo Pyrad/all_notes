@@ -131,3 +131,8 @@ fromdos <FILE>
 
 [link2](https://www.zhihu.com/question/27478597/answer/36837839)
 
+
+
+# 欧路词典词库
+
+[https://mdx.mdict.org/](https://mdx.mdict.org/)
