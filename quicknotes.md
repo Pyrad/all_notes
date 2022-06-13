@@ -167,6 +167,17 @@ Before `rm -rf ~/.kde`, make sure make backup for the kde config: `~/.kde/share/
 
 
 
+# Linux find files by dates
+
+`find` files by dates
+```shell
+# Find regular files and show them, between 2 dates
+find . -type f -newermt '01 jan 2009 00:00:00' -not -newermt '01 jan 2012 00:00:00' -ls
+# Find symbolic files and show them,  between 2 dates
+find . -type l -newermt '01 jan 2009 00:00:00' -not -newermt '01 jan 2012 00:00:00' -ls
+# Find symbolic files and delete them,  between 2 dates
+find . -type l -newermt '01 jan 2009 00:00:00' -not -newermt '01 jan 2012 00:00:00' -delete
+```
 
 
 
