@@ -154,7 +154,9 @@ How to install & use powerline in shell
 
 # 查看一个变量的类型: 
 https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_109.html
+
 whatis variable_name
+
 ptype variable_name
 
 # 查看gdb是否在编译时期设置了python support
@@ -165,3 +167,16 @@ http://www.yolinux.com/TUTORIALS/GDB-Commands.html#STLDEREF
 
 # Gdbinit file example
 https://gist.github.com/CocoaBeans/1879270
+
+
+
+
+
+# Git-bash powerline
+
+[为 Git Bash 设置 PowerLine](https://zhuanlan.zhihu.com/p/402739037)
+
+
+
+
+
