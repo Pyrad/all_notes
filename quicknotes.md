@@ -146,3 +146,22 @@ How to install & use powerline in shell
 - http://www.2daygeek.com/powerline-adds-powerful-statusline-to-vim-bash-tumx-in-ubuntu-fedora-debian-arch-linux-mint/
 
 - https://linux.cn/article-8651-1.html (translated to Chinese)
+
+
+# 打印一个函数里面的static variable
+(gdb) p 'longc_perf_test::longc_perf_cnt_7()::cnt'
+这里longc_perf_test是namespace，longc_perf_cnt_7()是函数，cnt是函数longc_perf_cnt_7()中的static变量，注意单引号必须加上
+
+# 查看一个变量的类型: 
+https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_109.html
+whatis variable_name
+ptype variable_name
+
+# 查看gdb是否在编译时期设置了python support
+gdb --configuration
+
+# 命令教程- 如何加载core dump文件
+http://www.yolinux.com/TUTORIALS/GDB-Commands.html#STLDEREF
+
+# Gdbinit file example
+https://gist.github.com/CocoaBeans/1879270
