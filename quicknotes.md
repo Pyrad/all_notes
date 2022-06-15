@@ -180,3 +180,14 @@ https://gist.github.com/CocoaBeans/1879270
 
 
 
+# GDB - Attached process to read stdin
+
+[https://github.com/cgdb/cgdb/issues/36](https://github.com/cgdb/cgdb/issues/36)
+
+Example,
+
+Write the desired input to a file "input.txt", then redirect in gdb
+
+```shell
+(gdb) r program-arg-list < input.txt
+```
