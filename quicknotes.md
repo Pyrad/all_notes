@@ -176,7 +176,7 @@ https://gist.github.com/CocoaBeans/1879270
 
 [为 Git Bash 设置 PowerLine](https://zhuanlan.zhihu.com/p/402739037)
 
-
+[使用nerd-font/font-patcher为字体添加字体图标](https://zhuanlan.zhihu.com/p/150097941)
 
 
 
