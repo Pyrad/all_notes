@@ -191,3 +191,8 @@ Write the desired input to a file "input.txt", then redirect in gdb
 ```shell
 (gdb) r program-arg-list < input.txt
 ```
+
+
+# Shell - parameter substitution
+
+[https://tldp.org/LDP/abs/html/parameter-substitution.html](https://tldp.org/LDP/abs/html/parameter-substitution.html)
