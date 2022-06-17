@@ -196,3 +196,9 @@ Write the desired input to a file "input.txt", then redirect in gdb
 # Shell - parameter substitution
 
 [https://tldp.org/LDP/abs/html/parameter-substitution.html](https://tldp.org/LDP/abs/html/parameter-substitution.html)
+
+# GDB - show program arguments
+
+```gdb
+(gdb) show args
+```
