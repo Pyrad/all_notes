@@ -222,3 +222,22 @@ For PowerShell
 Write-Host -NoNewLine "`e[2 q"
 ```
 
+
+
+# GDB check vtable from a pointer/reference to base class object
+
+```gdb
+(gdb) run
+Starting program: /home/bazis/test
+
+Program received signal SIGTRAP, Trace/breakpoint trap.
+main (argc=1, argv=0xbffff064) at test.cpp:23
+23 delete pObject;
+(gdb) print pObject
+$1 = (BaseClass *) 0x804b008
+(gdb) info vtbl pObject
+vtable for 'BaseClass' @ 0x80486c8 (subobject @ 0x804b008):
+[0]: 0x80485f4 <ChildClass::Test()>
+(gdb) info symbol 0x80486c8
+vtable for ChildClass + 8 in section .rodata of /home/bazis/test
+```
