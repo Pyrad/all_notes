@@ -449,3 +449,8 @@ All function parameters or arguments can be accessed via `$1, $2, $3,..., $N`.
 
 `$#` holds the number of positional parameters passed to the function.
 
+
+## Check fonts in Linux
+fc-list   #字体列表
+fc-list :lang=zh  #中文字体
+fc-match -v "字体名" # 查看字体详情
