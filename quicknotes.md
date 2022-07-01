@@ -323,7 +323,7 @@ Some powerline special glyphs
 ```
 
 
-### MSYS2 on Windows - Backspace works abnormally
+# MSYS2 on Windows - Backspace works abnormally
 
 Each hit of `backspace` produces a space and make the cursor move right, which is really a dealbreaker.
 
@@ -332,7 +332,7 @@ Possible solutions in this discussion: [Arrow keys and backspace not working in 
 
 
 
-### Bash array
+# Bash array
 
 ```bash
 # Syntax		Result
@@ -350,7 +350,7 @@ ${arr[@]:s:n}	Retrieve n elements starting at index s
 ```
 
 
-### Function shell variables
+# Function shell variables
 
 All function parameters or arguments can be accessed via `$1, $2, $3,..., $N`.
 
@@ -361,7 +361,7 @@ All function parameters or arguments can be accessed via `$1, $2, $3,..., $N`.
 `$#` holds the number of positional parameters passed to the function.
 
 
-## Check fonts in Linux
+# Check fonts in Linux
 
 字体列表
 
