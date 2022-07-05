@@ -305,3 +305,9 @@ fc-match -v "FontName"
 
     target_link_libraries(sample ${GTK3_LIBRARIES})
 ```
+
+# Replace certain words with consecutive numbers
+
+```vim
+:%s/x/\=printf("%d", line('.') - 10)
+```
