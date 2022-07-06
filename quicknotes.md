@@ -309,11 +309,7 @@ fc-match -v "FontName"
 # Turn on `-DBoost_DEBUG=ON` for cmake to print out more information about errors
 [cmake v3.15.3 cannot find boost v1.71.0](https://stackoverflow.com/questions/57870032/cmake-v3-15-3-cannot-find-boost-v1-71-0)
 
-# Replace certain words with consecutive numbers
 
-```vim
-:%s/x/\=printf("%d", line('.') - 10)
-```
 
 
 # How to enable dimmed C/C++ regions in VS Code
