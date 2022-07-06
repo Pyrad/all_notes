@@ -343,3 +343,6 @@ Observe that inactive regions are no longer colorized
 I'll edit my former post with a header so that people stumbling upon this thread don't get confused. Thanks again!
 
 
+# CMake Workshop
+
+[Detecting your environment](https://enccs.github.io/cmake-workshop/environment/)
