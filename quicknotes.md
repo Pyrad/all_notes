@@ -353,3 +353,12 @@ I'll edit my former post with a header so that people stumbling upon this thread
 
 [github访问加速](https://zhuanlan.zhihu.com/p/75994966?utm_source=wechat_session)
 
+
+
+
+
+# How to write a coc.nvim extension
+
+[Sam's world](https://samroeca.com/)
+
+https://samroeca.com/coc-plugin.html#coc-plugin
