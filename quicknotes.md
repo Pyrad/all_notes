@@ -362,3 +362,9 @@ I'll edit my former post with a header so that people stumbling upon this thread
 [Sam's world](https://samroeca.com/)
 
 https://samroeca.com/coc-plugin.html#coc-plugin
+
+
+
+# GitHub Speedup (diff ways)
+
+[Github加速的10种方式](https://www.cnblogs.com/shuangxinyuan/p/15506449.html)
