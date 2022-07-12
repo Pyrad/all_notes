@@ -393,3 +393,8 @@ https://blog.zengrong.net/post/pyton_support_on_vim/
 # Checking the code generated implicitly by the C++ compiler
 
 https://stackoverflow.com/questions/24858014/checking-the-code-generated-implicitly-by-the-c-compiler
+
+
+# How can I see parse tree, intermediate code, optimization code and assembly code during COMPILATION?
+
+https://stackoverflow.com/questions/1496497/how-can-i-see-parse-tree-intermediate-code-optimization-code-and-assembly-code
