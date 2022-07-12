@@ -388,3 +388,8 @@ https://blog.zengrong.net/post/pyton_support_on_vim/
 # Compiler Explorer
 
 [gcc.godbolt.org](https://gcc.godbolt.org)
+
+
+# Checking the code generated implicitly by the C++ compiler
+
+https://stackoverflow.com/questions/24858014/checking-the-code-generated-implicitly-by-the-c-compiler
