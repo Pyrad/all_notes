@@ -409,3 +409,11 @@ https://github.com/adah1972/vim/wiki
 
 
 
+# Pass clangd args to YouCompleteMe
+
+```vim
+let g:ycm_clangd_args = ['--query-driver=' .. '/depot/gcc-7.3.0/bin/g++']
+```
+
+
+
