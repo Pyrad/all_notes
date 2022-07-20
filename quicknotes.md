@@ -407,28 +407,3 @@ https://wiki.tcl-lang.org/page/Tcl+Tutorial+Index
 
 https://www.tcl.tk/man/tcl/contents.html
 
-
-# GDB Prints char* to a file
-
-https://stackoverflow.com/questions/14609577/print-character-array-to-file-in-gdb
-
-```gdb
-(gdb) pi open("myoutput_data.log","w").write(gdb.execute("print jclGlobals->pydata.source",to_string=True))
-```
-
-https://stackoverflow.com/questions/233328/how-do-i-print-the-full-value-of-a-long-string-in-gdb
-
-This is even better, because it honors the newline/carriage return chars instead of escaping them
-
-```gdb
-call (void)puts(your_string)
-```
-
-# Print length of char*
-
-```gdb
-(gdb) call strlen(charArr)
-'__strlen_sse2_pminub' has unknown return type; cast the call to its declared return type
-(gdb) call (int)strlen(charArr)
-$6 = 5156
-```
