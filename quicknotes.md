@@ -413,5 +413,13 @@ https://www.tcl.tk/man/tcl/contents.html
 https://stackoverflow.com/questions/14609577/print-character-array-to-file-in-gdb
 
 ```gdb
-(gdb) pi open("myoutput_data.log","w").write(gdb.execute("print jclGlobals->pydata.source",to_string=True))![image](https://user-images.githubusercontent.com/10632068/179958775-302ba707-5e85-409a-9e0a-fb42da1b275a.png)
+(gdb) pi open("myoutput_data.log","w").write(gdb.execute("print jclGlobals->pydata.source",to_string=True))
+```
+
+https://stackoverflow.com/questions/233328/how-do-i-print-the-full-value-of-a-long-string-in-gdb
+
+This is even better, because it honors the newline/carriage return chars instead of escaping them
+
+```gdb
+call (void)puts(your_string)
 ```
