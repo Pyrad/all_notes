@@ -148,28 +148,6 @@ How to install & use powerline in shell
 - https://linux.cn/article-8651-1.html (translated to Chinese)
 
 
-# 打印一个函数里面的static variable
-(gdb) p 'longc_perf_test::longc_perf_cnt_7()::cnt'
-这里longc_perf_test是namespace，longc_perf_cnt_7()是函数，cnt是函数longc_perf_cnt_7()中的static变量，注意单引号必须加上
-
-# 查看一个变量的类型: 
-https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_109.html
-
-whatis variable_name
-
-ptype variable_name
-
-# 查看gdb是否在编译时期设置了python support
-gdb --configuration
-
-# 命令教程- 如何加载core dump文件
-http://www.yolinux.com/TUTORIALS/GDB-Commands.html#STLDEREF
-
-# Gdbinit file example
-https://gist.github.com/CocoaBeans/1879270
-
-
-
 
 
 # Git-bash powerline
@@ -180,28 +158,11 @@ https://gist.github.com/CocoaBeans/1879270
 
 
 
-# GDB - Attached process to read stdin
-
-[https://github.com/cgdb/cgdb/issues/36](https://github.com/cgdb/cgdb/issues/36)
-
-Example,
-
-Write the desired input to a file "input.txt", then redirect in gdb
-
-```shell
-(gdb) r program-arg-list < input.txt
-```
-
 
 # Shell - parameter substitution
 
 [https://tldp.org/LDP/abs/html/parameter-substitution.html](https://tldp.org/LDP/abs/html/parameter-substitution.html)
 
-# GDB - show program arguments
-
-```gdb
-(gdb) show args
-```
 
 
 
@@ -224,23 +185,7 @@ Write-Host -NoNewLine "`e[2 q"
 
 
 
-# GDB check vtable from a pointer/reference to base class object
 
-```gdb
-(gdb) run
-Starting program: /home/bazis/test
-
-Program received signal SIGTRAP, Trace/breakpoint trap.
-main (argc=1, argv=0xbffff064) at test.cpp:23
-23 delete pObject;
-(gdb) print pObject
-$1 = (BaseClass *) 0x804b008
-(gdb) info vtbl pObject
-vtable for 'BaseClass' @ 0x80486c8 (subobject @ 0x804b008):
-[0]: 0x80485f4 <ChildClass::Test()>
-(gdb) info symbol 0x80486c8
-vtable for ChildClass + 8 in section .rodata of /home/bazis/test
-```
 
 
 
