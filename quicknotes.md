@@ -423,3 +423,12 @@ This is even better, because it honors the newline/carriage return chars instead
 ```gdb
 call (void)puts(your_string)
 ```
+
+# Print length of char*
+
+```gdb
+(gdb) call strlen(charArr)
+'__strlen_sse2_pminub' has unknown return type; cast the call to its declared return type
+(gdb) call (int)strlen(charArr)
+$6 = 5156
+```
