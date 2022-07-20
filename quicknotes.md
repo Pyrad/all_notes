@@ -406,3 +406,12 @@ https://wiki.tcl-lang.org/page/Tcl+Tutorial+Index
 # Tcl man page
 
 https://www.tcl.tk/man/tcl/contents.html
+
+
+# GDB Prints char* to a file
+
+https://stackoverflow.com/questions/14609577/print-character-array-to-file-in-gdb
+
+```gdb
+(gdb) pi open("myoutput_data.log","w").write(gdb.execute("print jclGlobals->pydata.source",to_string=True))![image](https://user-images.githubusercontent.com/10632068/179958775-302ba707-5e85-409a-9e0a-fb42da1b275a.png)
+```
