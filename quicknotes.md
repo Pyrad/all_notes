@@ -402,3 +402,7 @@ https://newbedev.com/building-with-cmake-ninja-and-clang-on-windows
 # Tcl tutorial
 
 https://wiki.tcl-lang.org/page/Tcl+Tutorial+Index
+
+# Tcl man page
+
+https://www.tcl.tk/man/tcl/contents.html
