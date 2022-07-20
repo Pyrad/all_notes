@@ -397,3 +397,8 @@ let g:ycm_clangd_args = ['--query-driver=' .. '/depot/gcc-7.3.0/bin/g++']
 # Building with CMake, Ninja and Clang on Windows
 
 https://newbedev.com/building-with-cmake-ninja-and-clang-on-windows
+
+
+# Tcl tutorial
+
+https://wiki.tcl-lang.org/page/Tcl+Tutorial+Index
