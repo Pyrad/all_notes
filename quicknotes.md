@@ -352,3 +352,23 @@ https://wiki.tcl-lang.org/page/Tcl+Tutorial+Index
 
 https://www.tcl.tk/man/tcl/contents.html
 
+
+
+# Vim to check if a plugin is loaded
+
+https://vi.stackexchange.com/questions/10939/how-to-see-if-a-plugin-is-active
+
+```vim
+" Method 1
+g:loaded_<plugin_name>
+
+" Method 2
+if exists("loaded_<plugin_name>")
+" ...
+endif
+```
+
+
+
+
+
