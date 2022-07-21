@@ -293,15 +293,6 @@ https://samroeca.com/coc-plugin.html#coc-plugin
 
 
 
-# VIM设置python3支持和检测python version
-
-注意vim的版本（64or32）必须和python3的版本一致
-
-python3的版本必须和vim中+python3/dyn所指明的python3版本一致，否则`echo has("python3")`只会返回`0`
-
-https://www.jianshu.com/p/18f06d12348c
-
-https://blog.zengrong.net/post/pyton_support_on_vim/
 
 
 
