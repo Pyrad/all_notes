@@ -198,26 +198,6 @@ Possible solutions in this discussion: [Arrow keys and backspace not working in 
 
 
 
-# Check fonts in Linux
-
-字体列表
-
-```bash
-fc-list
-```
-
-中文字体
-
-```bash
-fc-list :lang=zh
-```
-
-查看字体详情
-
-```bash
-fc-match -v "FontName"
-```
-
 # MSYS2 CMake path prefix is in Windows format (C:/) but needs MSYS2/\*nix style (/c/) to link
 
 [MSYS2 CMake path prefix is in Windows format (C:/) but needs MSYS2/*nix style (/c/) to link](https://stackoverflow.com/questions/54767375/msys2-cmake-path-prefix-is-in-windows-format-c-but-needs-msys2-nix-style)
