@@ -320,3 +320,8 @@ https://newbedev.com/building-with-cmake-ninja-and-clang-on-windows
 # 二十年目睹之怪现状
 
 夫抱火厝之积薪之下而寝其上，火未及燃，因谓之安，方今之势，何以异此！
+
+
+# clangd avoid background indexing
+
+https://github.com/clangd/clangd/issues/479
