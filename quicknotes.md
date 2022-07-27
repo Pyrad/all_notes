@@ -325,3 +325,14 @@ https://newbedev.com/building-with-cmake-ninja-and-clang-on-windows
 # clangd avoid background indexing
 
 https://github.com/clangd/clangd/issues/479
+
+
+# C++ Related Topics
+
+- What is a **literal type**?
+
+- What is cv-qualified
+
+- What is trival default constructor
+
+- What is an aggregate (class)
