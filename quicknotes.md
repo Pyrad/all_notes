@@ -336,3 +336,13 @@ https://github.com/clangd/clangd/issues/479
 - What is trival default constructor
 
 - What is an aggregate (class)
+
+
+# How to uninstall some/all Python packages?
+
+Reference: https://stackoverflow.com/questions/11248073/what-is-the-easiest-way-to-remove-all-packages-installed-by-pip
+
+```cmd
+pip freeze > packagelist.txt
+pip uninstall -r packagelist.txt -y
+```
