@@ -346,3 +346,9 @@ Reference: https://stackoverflow.com/questions/11248073/what-is-the-easiest-way-
 pip freeze > packagelist.txt
 pip uninstall -r packagelist.txt -y
 ```
+
+# Check shortcuts/key-mapping of Vim
+
+```vim
+:help index
+```
