@@ -358,3 +358,12 @@ endsnippet
 
 
 ```
+
+
+
+# Use GDB in Geany
+
+[The Geany](https://www.geany.org/)
+
+https://www.zhihu.com/question/65306462/answer/2603110780
+
