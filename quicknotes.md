@@ -316,51 +316,6 @@ https://newbedev.com/building-with-cmake-ninja-and-clang-on-windows
 
 
 
-
-# Vim snipptes - C/C++
-
-```vim
-###########################################################################
-#			    My own Snippets
-#			    longc
-#			    2022-08-01 12:40
-###########################################################################
-
-snippet /**c "Class doxygen" b
-/**
- * @brief: 
- *
- */
-class ${1:ClassName} {
-public:
-	$1() :  { }
-	virtual ~$1() { }
-
-private:
-	${2:MemberType} ${3:MemberName};
-};
-endsnippet
-
-snippet /**f "Function doxygen" b
-/**
- * @brief: ${4:brief}
- *
- * @param: `!p write_docstring_args(t[3],snip)`
- *
- * @return: `!p snip.rv = t[1]`
- */
-${1:ReturnType} ${2:FunctionName}(${3:param})
-{
-	${0:FunctionBody}
-}
-endsnippet
-
-
-
-```
-
-
-
 # Use GDB in Geany
 
 [The Geany](https://www.geany.org/)
