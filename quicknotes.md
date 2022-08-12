@@ -4,8 +4,6 @@
 
 [https://github.com/yungyuc](https://github.com/yungyuc)
 
-
-
 ## Install sphinx (related)
 
 ```shell
@@ -20,15 +18,9 @@ pip install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.ali
 pip install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com myst_parser
 ```
 
-
-
 ## **labuladong** 算法小抄
 
 [https://labuladong.gitee.io/algo/](https://labuladong.gitee.io/algo/)
-
-
-
-
 
 # Git for Windows downloads：
 
@@ -74,27 +66,15 @@ https://mirrors.tuna.tsinghua.edu.cn/help/msys2/
 MSYS2使用教程
 https://blog.csdn.net/Dreamhai/article/details/109842184
 
-
-
-
-
 # How-to ReadTheDoc articles
 
 https://www.jianshu.com/p/058440ed14df
 
 https://zhuanlan.zhihu.com/p/380889131
 
-
-
-
-
 # Gitee笔记首页示例
 
 http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/object-oriented-vs-procedure-oriented
-
-
-
-
 
 # Ubuntu 安装tofrodos（类似dos2unix)
 
@@ -111,13 +91,9 @@ todos <FILE>
 fromdos <FILE>
 ```
 
-
 # Sphnix + reStructuredText + ReadTheDocs Tutorial
+
 - [Series From youtube](https://www.youtube.com/watch?v=pzzjW0Xv_gk&list=PLPDCBPbzk1AYghqYazE7Cxt3p7edml8I7&index=1)
-
-
-
-
 
 # MathJax
 
@@ -125,19 +101,15 @@ fromdos <FILE>
 
 [How-to-add-MathJax in Sphinx](https://www.sphinx-doc.org/en/master/usage/extensions/math.html#module-sphinx.ext.mathjax)
 
-
 # Vim frequently used commands
+
 [link](http://blog.chinaunix.net/uid-20769502-id-112737.html)
 
 [link2](https://www.zhihu.com/question/27478597/answer/36837839)
 
-
-
 # 欧路词典词库
 
 [https://mdx.mdict.org/](https://mdx.mdict.org/)
-
-
 
 # Linux Powerline for Shell
 
@@ -147,24 +119,15 @@ How to install & use powerline in shell
 
 - https://linux.cn/article-8651-1.html (translated to Chinese)
 
-
-
-
 # Git-bash powerline
 
 [为 Git Bash 设置 PowerLine](https://zhuanlan.zhihu.com/p/402739037)
 
 [使用nerd-font/font-patcher为字体添加字体图标](https://zhuanlan.zhihu.com/p/150097941)
 
-
-
-
 # Shell - parameter substitution
 
 [https://tldp.org/LDP/abs/html/parameter-substitution.html](https://tldp.org/LDP/abs/html/parameter-substitution.html)
-
-
-
 
 # To disable cursor blinking in Windows Terminal
 
@@ -176,27 +139,17 @@ Putting the following at the end of your .bashrc/.zshrc file
 echo -e -n "\e[2 q"
 ```
 
-
 For PowerShell
 
 ```powershell
 Write-Host -NoNewLine "`e[2 q"
 ```
 
-
-
-
-
-
-
 # MSYS2 on Windows - Backspace works abnormally
 
 Each hit of `backspace` produces a space and make the cursor move right, which is really a dealbreaker.
 
 Possible solutions in this discussion: [Arrow keys and backspace not working in bash after recent update](https://github.com/msys2/MSYS2-packages/issues/1124)
-
-
-
 
 # MSYS2 CMake path prefix is in Windows format (C:/) but needs MSYS2/\*nix style (/c/) to link
 
@@ -232,30 +185,16 @@ Possible solutions in this discussion: [Arrow keys and backspace not working in 
 ```
 
 # Turn on `-DBoost_DEBUG=ON` for cmake to print out more information about errors
+
 [cmake v3.15.3 cannot find boost v1.71.0](https://stackoverflow.com/questions/57870032/cmake-v3-15-3-cannot-find-boost-v1-71-0)
-
-
-
-
-
 
 # CMake Workshop
 
 [Detecting your environment](https://enccs.github.io/cmake-workshop/environment/)
 
-
-
-
-
-
-
 # Github 加速
 
 [github访问加速](https://zhuanlan.zhihu.com/p/75994966?utm_source=wechat_session)
-
-
-
-
 
 # How to write a coc.nvim extension
 
@@ -263,42 +202,25 @@ Possible solutions in this discussion: [Arrow keys and backspace not working in 
 
 https://samroeca.com/coc-plugin.html#coc-plugin
 
-
-
 # GitHub Speedup (diff ways)
 
 [Github加速的10种方式](https://www.cnblogs.com/shuangxinyuan/p/15506449.html)
-
-
-
-
-
-
-
 
 # Compiler Explorer
 
 [gcc.godbolt.org](https://gcc.godbolt.org)
 
-
 # Checking the code generated implicitly by the C++ compiler
 
 https://stackoverflow.com/questions/24858014/checking-the-code-generated-implicitly-by-the-c-compiler
-
 
 # How can I see parse tree, intermediate code, optimization code and assembly code during COMPILATION?
 
 https://stackoverflow.com/questions/1496497/how-can-i-see-parse-tree-intermediate-code-optimization-code-and-assembly-code
 
-
-
-
-
 # How to make vim for win32 - Yongwei
 
 https://github.com/adah1972/vim/wiki
-
-
 
 # Pass clangd args to YouCompleteMe
 
@@ -306,15 +228,9 @@ https://github.com/adah1972/vim/wiki
 let g:ycm_clangd_args = ['--query-driver=' .. '/depot/gcc-7.3.0/bin/g++']
 ```
 
-
-
-
-
 # Building with CMake, Ninja and Clang on Windows
 
 https://newbedev.com/building-with-cmake-ninja-and-clang-on-windows
-
-
 
 # Use GDB in Geany
 
@@ -322,7 +238,14 @@ https://newbedev.com/building-with-cmake-ninja-and-clang-on-windows
 
 https://www.zhihu.com/question/65306462/answer/2603110780
 
-
 # 瑞泽家园样板间地址
 
 用友软件园西区1C#楼2段北
+
+
+
+# Use homebrew mirror URLs from Tsinghua university
+
+[Homebrew / Linuxbrew 镜像使用帮助](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
+
+[Homebrew 国内使用加速](https://www.cnblogs.com/cocowool/p/speedup-homebrew.html)
