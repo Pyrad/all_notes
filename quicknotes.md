@@ -262,3 +262,9 @@ https://www.zhihu.com/question/65306462/answer/2603110780
 
 [最全综述 | 图像分割算法](https://zhuanlan.zhihu.com/p/540084832)
 
+
+
+# GDB Python Support
+[GDB Python Support](https://devguide.python.org/advanced-tools/gdb/index.html)
+
+
