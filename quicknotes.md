@@ -290,6 +290,10 @@ https://www.zhihu.com/question/65306462/answer/2603110780
 
 [Cairo](https://www.cairographics.org/)
 
+[OpenMesh](https://www.graphics.rwth-aachen.de/software/openmesh/)
+
+[libigl](https://libigl.github.io/)
+
 
 ## From Stackoverflow answers
 
@@ -297,4 +301,6 @@ https://www.zhihu.com/question/65306462/answer/2603110780
 
 [Geometry library for C++ - Software Recommendations Stack Exchange](https://softwarerecs.stackexchange.com/questions/16702/geometry-library-for-c)
 
+[List of numerical libraries - Wikipedia](https://en.wikipedia.org/wiki/List_of_numerical_libraries)
 
+[Category:Geometric algorithms - Wikipedia](https://en.wikipedia.org/wiki/Category:Geometric_algorithms)
