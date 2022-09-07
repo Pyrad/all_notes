@@ -270,7 +270,7 @@ https://www.zhihu.com/question/65306462/answer/2603110780
 
 
 
-C++ Geometry Libraries
+# C++ Geometry Libraries
 
 [Wykobi](http://www.wykobi.com/)
 
@@ -290,7 +290,8 @@ C++ Geometry Libraries
 
 [Cairo](https://www.cairographics.org/)
 
-From Stackoverflow answers
+
+## From Stackoverflow answers
 
 [c++ - 2D Geometry library: LGPL alternative to CGAL? - Stack Overflow](https://stackoverflow.com/questions/9349220/2d-geometry-library-lgpl-alternative-to-cgal)
 
