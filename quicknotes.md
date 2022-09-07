@@ -268,3 +268,32 @@ https://www.zhihu.com/question/65306462/answer/2603110780
 [GDB Python Support](https://devguide.python.org/advanced-tools/gdb/index.html)
 
 
+
+
+C++ Geometry Libraries
+
+[Wykobi](http://www.wykobi.com/)
+
+[CGAL](https://www.cgal.org/)
+
+[Geometric Tools: Documentation](https://www.geometrictools.com/Documentation/Documentation.html)
+
+[GeoLib](http://www.geolib.co.uk/)
+
+[OpenGL](http://www.opengl.org/)
+
+[Geometric Tools](https://www.geometrictools.com/)
+
+[Point Cloud Library](https://pointclouds.org/)
+
+[PLIB](http://plib.sourceforge.net/index.html)
+
+[Cairo](https://www.cairographics.org/)
+
+From Stackoverflow answers
+
+[c++ - 2D Geometry library: LGPL alternative to CGAL? - Stack Overflow](https://stackoverflow.com/questions/9349220/2d-geometry-library-lgpl-alternative-to-cgal)
+
+[Geometry library for C++ - Software Recommendations Stack Exchange](https://softwarerecs.stackexchange.com/questions/16702/geometry-library-for-c)
+
+
