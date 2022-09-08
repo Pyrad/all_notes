@@ -273,3 +273,5 @@ https://www.zhihu.com/question/65306462/answer/2603110780
 # GDB Pretty Printer
 
 https://stackoverflow.com/questions/12574253/c-gdb-python-pretty-printing-tutorial
+
+https://www.kurokatta.org/grumble/2018/05/gdb-pretty
