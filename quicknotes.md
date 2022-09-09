@@ -252,18 +252,6 @@ https://www.zhihu.com/question/65306462/answer/2603110780
 
 
 
-## 图形分割
-
-[图分割Graph Partitioning技术总结](https://zhuanlan.zhihu.com/p/446152634)
-
-[图像分割 传统方法 整理](https://zhuanlan.zhihu.com/p/30732385)
-
-[数字图像处理中常用图像分割算法有哪些？](https://www.zhihu.com/question/26085954/answer/152232547)
-
-[最全综述 | 图像分割算法](https://zhuanlan.zhihu.com/p/540084832)
-
-
-
 # GDB Python Support
 [GDB Python Support](https://devguide.python.org/advanced-tools/gdb/index.html)
 
