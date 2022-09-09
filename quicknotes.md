@@ -244,6 +244,12 @@ https://www.zhihu.com/question/65306462/answer/2603110780
 
 
 
+# 百度网盘搜索 - 知乎文章
+
+[15个好用的百度网盘搜索引擎 - crystal的文章 - 知乎](https://zhuanlan.zhihu.com/p/60840594)
+
+
+
 # Use homebrew mirror URLs from Tsinghua university
 
 [Homebrew / Linuxbrew 镜像使用帮助](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
