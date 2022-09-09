@@ -280,3 +280,8 @@ https://www.kurokatta.org/grumble/2018/05/gdb-pretty
 
 https://en.wikipedia.org/wiki/Computational_geometry
 
+[NanoVG](https://github.com/memononen/nanovg)
+
+[你工作中最推荐的 C/C++ 程序库有哪些，为什么？ - chunquedong的回答 - 知乎](https://www.zhihu.com/question/51134387/answer/2664748363)
+
+[你工作中最推荐的 C/C++ 程序库有哪些，为什么？ - 知乎](https://www.zhihu.com/question/51134387)
