@@ -279,3 +279,15 @@ https://en.wikipedia.org/wiki/Computational_geometry
 [你工作中最推荐的 C/C++ 程序库有哪些，为什么？ - chunquedong的回答 - 知乎](https://www.zhihu.com/question/51134387/answer/2664748363)
 
 [你工作中最推荐的 C/C++ 程序库有哪些，为什么？ - 知乎](https://www.zhihu.com/question/51134387)
+
+
+
+# Doxygen - How to create a doxygen doc for C++ STL?
+
+https://www.doxygen.nl/manual/external.html
+
+https://en.cppreference.com/w/Cppreference:Archives
+
+https://flcwiki.desy.de/How%20to%20document%20your%20code%20using%20doxygen
+
+
