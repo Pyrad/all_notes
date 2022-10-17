@@ -291,3 +291,10 @@ https://en.cppreference.com/w/Cppreference:Archives
 https://flcwiki.desy.de/How%20to%20document%20your%20code%20using%20doxygen
 
 
+
+
+# English word check
+
+[linggle](https://linggle.com/)
+
+
