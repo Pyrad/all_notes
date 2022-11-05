@@ -298,3 +298,16 @@ https://flcwiki.desy.de/How%20to%20document%20your%20code%20using%20doxygen
 [linggle](https://linggle.com/)
 
 
+
+
+
+# Z-library how-to-find
+
+[Pirate Library Mirror](http://pilimi.org/)
+
+[Zlibrary 最新入口](https://find.looks.wang/)
+
+[易书论坛 Zlibrary](https://bbs.yibook.org/)
+
+[Zlibrary Pro Helper](https://zlib.pro/)
+
