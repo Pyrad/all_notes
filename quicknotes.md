@@ -318,10 +318,8 @@ Short answer: no.
 
 detail: [https://stackoverflow.com/questions/50346822/does-lambda-object-construction-cost-a-lot]()
 
-here, lambda is just an instance of an anonymous type. The type itself is processed at compile-time, so no worries.
-
-What happens at run-time though is the capture of variables (here var). When a capture is done by value, the value itself is copied into the lambda instance.
-
-This is what costs. When a capture is done by reference, the reference is copied into the lambda, which is cheap.
+> here, lambda is just an instance of an anonymous type. The type itself is processed at compile-time, so no worries.
+> What happens at run-time though is the capture of variables (here var). When a capture is done by value, the value itself is copied into the lambda instance.
+> This is what costs. When a capture is done by reference, the reference is copied into the lambda, which is cheap.
 
 
