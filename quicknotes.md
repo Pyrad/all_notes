@@ -322,9 +322,3 @@ detail: [https://stackoverflow.com/questions/50346822/does-lambda-object-constru
 > What happens at run-time though is the capture of variables (here var). When a capture is done by value, the value itself is copied into the lambda instance.
 > This is what costs. When a capture is done by reference, the reference is copied into the lambda, which is cheap.
 
-
-# User's RSS total memory on this Linux
-
-```sh
-ps --no-headers -eo user,rss | grep longc | awk '{arr[$1]+=$2}; END {for (i in arr) {print i,arr[i]}}' | sort -nk2
-```
