@@ -324,19 +324,3 @@ detail: [https://stackoverflow.com/questions/50346822/does-lambda-object-constru
 
 
 
-# Create std::string in GDB
-
-[link](https://stackoverflow.com/questions/7429462/creating-c-string-in-gdb)
-
-You should be able to construct a new std::string within the GDB.
-
-You want to allocate space on the heap to hold the std::string object, invoke the default constructor, and assign your string value. Here is an example:
-
-```shell
-(gdb) call malloc(sizeof(std::string))$1 = (void*) 0x91a6a0(gdb) call((std::string*)0x91a6a0)->basic_string()
-(gdb) call((std::string*)0x91a6a0)->assign("Hello, World")
-$2= (std::basic_string<char, std::char_traits<char>, std::allocator<char> > &) @0x91a6a0: {staticnpos = <optimized out>, _M_dataplus = {<std::allocator<char>> = {<__gnu_cxx::new_allocator<char>> = {<No data fields>}, <No data fields>}, _M_p = 0x91a6f8"Hello, World"}}
-(gdb) call SomeFunctionThatTakesAConstStringRef(*(conststd::string*)0x91a6a0)
-
-```
-
