@@ -323,4 +323,7 @@ detail: [https://stackoverflow.com/questions/50346822/does-lambda-object-constru
 > This is what costs. When a capture is done by reference, the reference is copied into the lambda, which is cheap.
 
 
+# GDB watch points
+
+[GDB watch point](https://undo.io/resources/gdb-watchpoint/watchpoints-more-than-watch-and-continue/)
 
