@@ -322,5 +322,12 @@ detail: [https://stackoverflow.com/questions/50346822/does-lambda-object-constru
 > What happens at run-time though is the capture of variables (here var). When a capture is done by value, the value itself is copied into the lambda instance.
 > This is what costs. When a capture is done by reference, the reference is copied into the lambda, which is cheap.
 
+# C++ Macro Expansion
+
+Use `-E` option of `gcc/g++`.
+
+```shell
+g++ -E source_file.cpp > source_file_preprocess_out.cpp
+```
 
 
