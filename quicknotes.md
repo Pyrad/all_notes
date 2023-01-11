@@ -343,3 +343,11 @@ Load a breakpoint file into current gdb sesseion
 ```gdb
 source my_bp_fname.brk
 ```
+
+# Git to show  messages of only one commit
+
+Only show the names of files modified, w/o diff
+
+```shell
+git show SHA_COMMIT_KEY --name-only
+```
