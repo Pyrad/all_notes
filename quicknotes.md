@@ -330,4 +330,16 @@ Use `-E` option of `gcc/g++`.
 g++ -E source_file.cpp > source_file_preprocess_out.cpp
 ```
 
+# GDB save breakpoints
 
+Save current breakpoints as a file
+
+```gdb
+save breakpoints my_bp_fname.brk
+```
+
+Load a breakpoint file into current gdb sesseion
+
+```gdb
+source my_bp_fname.brk
+```
