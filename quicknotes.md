@@ -351,3 +351,7 @@ Only show the names of files modified, w/o diff
 ```shell
 git show SHA_COMMIT_KEY --name-only
 ```
+
+# Word
+
+Floor is yours, it means: You have the right to speak now! Say what you want!
