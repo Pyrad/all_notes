@@ -331,15 +331,6 @@ g++ -E source_file.cpp > source_file_preprocess_out.cpp
 ```
 
 
-
-# Git to show  messages of only one commit
-
-Only show the names of files modified, w/o diff
-
-```shell
-git show SHA_COMMIT_KEY --name-only
-```
-
 # Word
 
 Floor is yours, it means: You have the right to speak now! Say what you want!
@@ -349,32 +340,3 @@ Floor is yours, it means: You have the right to speak now! Say what you want!
 [List of LaTeX mathematical symbols](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)
 
 
-# English
-
-pagination /*ˌpædʒɪˈneɪʃ(ə)n*/ n.标记页数；页码
-
-egregious /iˈɡrējəs/ adj. outstandingly bad; shocking
-
-# GDB
-
-## Start GDB with a program and its arguments
-
-`gcc` is the name of the program, and everything after it is the arguments, because `--args` is specified.
-
-```shell
-gdb --args gcc -O2 -c foo.c
-```
-
-## Run gdb without printing the front material
-
-```shell
-gdb --silent
-gdb --quiet
-gdb -q
-```
-
-## Run gdb with a core dump file
-
-```shell
-gdb <program_name> <core_dump_file>
-```
