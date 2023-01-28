@@ -353,6 +353,8 @@ Floor is yours, it means: You have the right to speak now! Say what you want!
 
 pagination /*ˌpædʒɪˈneɪʃ(ə)n*/ n.标记页数；页码
 
+egregious /iˈɡrējəs/ adj. outstandingly bad; shocking
+
 # GDB
 
 ## Start GDB with a program and its arguments
