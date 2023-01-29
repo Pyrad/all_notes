@@ -340,3 +340,6 @@ Floor is yours, it means: You have the right to speak now! Say what you want!
 [List of LaTeX mathematical symbols](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)
 
 
+# GDB tutorial
+
+[RMS's gdb Debugger Tutorial](http://www.unknownroad.com/rtfm/gdbtut/)
