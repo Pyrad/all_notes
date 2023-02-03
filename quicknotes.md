@@ -347,3 +347,14 @@ Floor is yours, it means: You have the right to speak now! Say what you want!
 # Git repo control line ending styles
 
 [Git End-of-Line Issues](https://learn.openwaterfoundation.org/owf-learn-git/eol/)
+
+# Latex Use backslash itself
+
+A example using backslash in a matrx (latex syntax)
+
+$$
+\begin{matrix}
+\alpha & \backslash{alpha} & \beta & \backslash{beta} &
+\gamma & \backslash{gamma} & \delta & \backslash{delta} \\
+\end{matrix}
+$$
