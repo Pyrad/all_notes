@@ -362,6 +362,8 @@ $$
 
 # Greek Alphabet in Latex
 
+$$
+
 \begin{matrix}
 
 A\alpha & A, \backslash{alpha} &
@@ -402,3 +404,4 @@ X\chi &  X, \backslash{chi } \\
 
 \end{matrix}
 
+$$
