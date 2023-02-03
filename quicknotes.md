@@ -311,6 +311,12 @@ https://flcwiki.desy.de/How%20to%20document%20your%20code%20using%20doxygen
 
 [Zlibrary Pro Helper](https://zlib.pro/)
 
+https://nav.yibook.org/
+
+https://www.pdfdrive.com/
+
+https://xmsoushu.com/#/
+
 
 # Does C++ lambda have any runtime cost?
 
