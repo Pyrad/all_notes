@@ -438,13 +438,6 @@ class Foo {
 ```
 
 
-# Copy/Yank a single character
-
-`yl`
-
-
-
-
 
 # CMake 正确链接动态库
 
