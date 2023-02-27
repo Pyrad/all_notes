@@ -563,6 +563,8 @@ myTestDbgFile_c.txt
 
 # Permenantly delete commits after a commit number
 
+[Answer in Stack Overflow](https://stackoverflow.com/questions/4114095/how-do-i-revert-a-git-repository-to-a-previous-commit)
+
 This will destroy any local modifications after 0d1d7fc32 (0d1d7fc32 is not destroyed)
 
 Don't do it if you have uncommitted work you want to keep.
