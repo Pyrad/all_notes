@@ -587,3 +587,11 @@ You could get merge conflicts, if you've modified things which were changed sinc
 # Git cheat-sheet from GitLab
 
 [git-cheat-sheet.pdf](https://about.gitlab.com/images/press/git-cheat-sheet.pdf)
+
+
+
+# Bentley-Ottmann Sweep line algorithm
+
+[Bentley-Ottmann Sweep line algorithm](https://github.com/ideasman42/isect_segments-bentley_ottmann)
+
+
