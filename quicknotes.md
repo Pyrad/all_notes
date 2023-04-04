@@ -607,6 +607,16 @@ In Vim, ensure you are command mode by hitting the Esc key.
 - To exit paste mode, type `:set nopaste`. Notice the `– INSERT –` at the bottom of the Vim window. This means you are back to normal insert mode.
 
 
+# Vim remove color codes from terminal
+
+[Removing ANSI Color Codes from a text file in VI](https://superuser.com/questions/1445805/removing-ansi-color-codes-from-a-text-file-in-vi)
+
+
+
+
+
+
+
 
 
 
