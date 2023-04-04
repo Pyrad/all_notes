@@ -615,7 +615,9 @@ In Vim, ensure you are command mode by hitting the Esc key.
 
 Just use `:e`
 
+# Bash multiple conditions and `[[` and `((` in if-condition
 
+[Bash Multiple Conditions](https://stackoverflow.com/a/20263097)
 
 
 
