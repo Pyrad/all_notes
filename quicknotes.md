@@ -473,55 +473,7 @@ myTestDbgFile_b.txt
 myTestDbgFile_c.txt
 ```
 
-# Frontline Meeting preparation notes
 
-## 2023-Feb-20
-
-### 1. N3E job idle after correction complete
-
-- It seems we have already confirmed that this issue belongs to the FrameWork team.
-
-- I saw we had a Jira tracking it, and FrameWork team will start it by next month.
-
-- So if there's nothing more to discuss, we can skip this one.
-
-### 2. dpserver abnormal end
-
-- **Anny** found that the race condition in TBB library caused this abnormal end issue.
-
-- So we have already asked FW team to upgrade the TBB library.
-
-- Like the previous one, we are waiting for FW team to fix this.
-
-- Any updates? If there is none, let's go to the next issue.
-
-### 3. EBO: template correction got segmentation fault (OPC H-BOSS production job failure)
-
-- For this issue, we finally found the crash happened in simulation code.
-
-- I think an engineering build has been provided for collecting more information.
-
-- But **Sean** said that the there's something wrong with this engineering build, looks like the recipe caused that problem.
-
-- So, do we have any updates for this one?
-
-### 4. job idle when DP write output
-
-- **Sean** reported another big job got the same issue.
-  
-  And the job became idle after running for 3 days using 10k dpservers.
-  
-  But 3 days later, Sean got news from EBO that the job was still running.
-  
-  After the output file size increased, again no more updates after that.
-
-- So looks like the performance is bad.
-
-- After looking at gstack dump of 2 dpservers for write-out, **Lilo** said the dpserver was stuck at a FW DP writer function.
-
-- **Allen Hsu** helped **Sean** check status and got a thread dump.
-
-- **Alan** asked **Sean** to check the opened file descriptors, and found the fragment files are open, which meant that the write process was still running.
 
 # Permenantly delete commits after a commit number
 
