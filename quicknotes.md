@@ -713,3 +713,12 @@ Save and commit, then it's done.
 ```shell
 git diff --name-only --diff-filter=U --relative
 ```
+
+
+
+# Vim Repeat finding next character in this line
+
+Use `f` + `<char>` to move the the 1st occurrence of this line, then press `;` (semicolon) to jump to the 2nd occurrence, again for the next until none.
+
+
+
