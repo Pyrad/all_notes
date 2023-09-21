@@ -720,5 +720,13 @@ git diff --name-only --diff-filter=U --relative
 
 Use `f` + `<char>` to move the the 1st occurrence of this line, then press `;` (semicolon) to jump to the 2nd occurrence, again for the next until none.
 
+# Use vimgrep and quickfix window
+
+```vim
+:vimgrep /keyword_pattern/g % | cw
+```
+
+Here `keyword_pattern` is the word to search, and `%` is current file name, `cw` is used to open the quickfix windows
+
 
 
