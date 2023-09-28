@@ -729,4 +729,14 @@ Use `f` + `<char>` to move the the 1st occurrence of this line, then press `;` (
 Here `keyword_pattern` is the word to search, and `%` is current file name, `cw` is used to open the quickfix windows
 
 
+# Python create list and generator
+
+```python
+a_list = [i for i in range(10)]
+a_itr = (i for i in range(10))
+next_element_0 = next(a_itr, None)
+next_element_1 = next(a_itr, None)
+```
+
+Here `next_element_0` is `0` and `next_element_1` is `1`.
 
