@@ -750,4 +750,7 @@ Here `next_element_0` is `0` and `next_element_1` is `1`.
 5. Once the new username has been added, click the Apply button and OK.
 6. Then, log out of your account, and you'll be greeted with your new username on the sign-in screen when you sign in.
 
+# How to Rename a User Folder in Windows 11
+
+[https://www.alphr.com/rename-user-folder-windows-11/](https://www.alphr.com/rename-user-folder-windows-11/)
 
