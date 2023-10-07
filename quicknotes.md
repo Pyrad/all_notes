@@ -740,3 +740,14 @@ next_element_1 = next(a_itr, None)
 
 Here `next_element_0` is `0` and `next_element_1` is `1`.
 
+
+# Change weird username on Windows 11
+
+1. Open Run Command by `Win + R`, type `netplwiz` and hit `Enter`.
+2. In the User Accounts window, select the user account for which the username needs to be changed.
+3. Click on Properties.
+4. In the General tab, you'll see your existing username. Rename it to your liking after removing it.
+5. Once the new username has been added, click the Apply button and OK.
+6. Then, log out of your account, and you'll be greeted with your new username on the sign-in screen when you sign in.
+
+
