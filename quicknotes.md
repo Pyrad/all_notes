@@ -754,3 +754,7 @@ Here `next_element_0` is `0` and `next_element_1` is `1`.
 
 [https://www.alphr.com/rename-user-folder-windows-11/](https://www.alphr.com/rename-user-folder-windows-11/)
 
+
+# Python design patterns
+
+[Python design patterns - https://python-patterns.guide](https://python-patterns.guide/)
