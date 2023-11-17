@@ -761,6 +761,8 @@ Here `next_element_0` is `0` and `next_element_1` is `1`.
 
 # How to create a singleton class in Python
 
+Refer to link (Creating a singleton in Python)[https://stackoverflow.com/questions/6760685/creating-a-singleton-in-python]
+
 A singleton
 
 ```python
