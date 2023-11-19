@@ -509,10 +509,6 @@ Start gitg normally
 
 The steps here come from this [answer](https://stackoverflow.com/questions/36209671/im-trying-to-run-gedit-in-cygwin-but-receiving-error)
 
-# Vim remove color codes from terminal
-
-[Removing ANSI Color Codes from a text file in VI](https://superuser.com/questions/1445805/removing-ansi-color-codes-from-a-text-file-in-vi)
-
 # Vim Reload current file
 
 Just use `:e`
