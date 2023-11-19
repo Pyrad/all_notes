@@ -514,12 +514,3 @@ The steps here come from this [answer](https://stackoverflow.com/questions/36209
 [Bash Multiple Conditions](https://stackoverflow.com/a/20263097)
 
 
-# Use vimgrep and quickfix window
-
-```vim
-:vimgrep /keyword_pattern/g % | cw
-```
-
-Here `keyword_pattern` is the word to search, and `%` is current file name, `cw` is used to open the quickfix windows
-
-
