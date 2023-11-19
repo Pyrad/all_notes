@@ -252,16 +252,6 @@ https://www.zhihu.com/question/65306462/answer/2603110780
 
 [Homebrew 国内使用加速](https://www.cnblogs.com/cocowool/p/speedup-homebrew.html)
 
-# GDB Python Support
-
-[GDB Python Support](https://devguide.python.org/advanced-tools/gdb/index.html)
-
-# GDB Pretty Printer
-
-https://stackoverflow.com/questions/12574253/c-gdb-python-pretty-printing-tutorial
-
-https://www.kurokatta.org/grumble/2018/05/gdb-pretty
-
 # Computational Geometry
 
 https://en.wikipedia.org/wiki/Computational_geometry
