@@ -499,10 +499,6 @@ This saves the modifications, then reapplies that patch after resetting.
 
 You could get merge conflicts, if you've modified things which were changed since the commit you reset to.
 
-# Git cheat-sheet from GitLab
-
-[git-cheat-sheet.pdf](https://about.gitlab.com/images/press/git-cheat-sheet.pdf)
-
 # Bentley-Ottmann Sweep line algorithm
 
 [Bentley-Ottmann Sweep line algorithm](https://github.com/ideasman42/isect_segments-bentley_ottmann)
@@ -579,83 +575,6 @@ Symbol `%` is a register in Vim, which stores the current file name
 In normal mode, use `"%p` to paste the current file name to current cursor's position (or use `"%P` to paste before the cursor)
 
 [Get the name of the current file](https://vim.fandom.com/wiki/Get_the_name_of_the_current_file#:~:text=In%20insert%20mode%2C%20type%20Ctrl,to%20create%20a%20similar%20name.)
-
-
-
-
-# Use a stash for temp backup
-
-[A practical guide to using the git stash command | Opensource.com](https://opensource.com/article/21/4/git-stash)
-
-If you have some files modified in current branch, but suddenly you want to switch to other branches with a clean directory (no modified file), then you can use `git stash`.
-
-
-
-Save your current modified files to a stash
-
-```shell
-git stash
-```
-
-or,
-
-```shell
-git stash save "My temp modified files"
-```
-
-
-
-To check how many stashes you have,
-
-```shell
-git stash list
-```
-
-This might show something like this,
-
-```shell
-stash@{0}: WIP on dev: 40d943c63b Fix a bug
-stash@{1}: WIP on dev: f0000c6066 Update code format
-```
-
-
-
-To show a diff summary of a specific stash, for example, to check `stash@{0}`
-
-```shell
-git stash show stash@{0}
-```
-
-This will show something like this,
-
-```shell
- src/array.cpp          |  2 +-
- src/geom.cpp           | 37 +++++++++++++--------------
- 2 files changed, 19 insertions(+), 20 deletions(-)
-```
-
-
-
-To bring up your code from a specific stash, for example, retrieve code from `stash@{0}`
-
-```shell
-git stash apply stash@{0}
-```
-
-The above command will not remove the stash. If you want to remove it from the stash list, use `pop` instead as the following,
-
-```shell
-git stash pop stash@{0}
-```
-
-
-
-To show detailed diff, use `--patch` or `-p` flag together with `show` option.
-
-```shell
-git stash show stash@{0}
-git stash show stash@{0} --patch
-```
 
 # Vim Repeat finding next character in this line
 
