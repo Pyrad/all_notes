@@ -509,10 +509,6 @@ Start gitg normally
 
 The steps here come from this [answer](https://stackoverflow.com/questions/36209671/im-trying-to-run-gedit-in-cygwin-but-receiving-error)
 
-# Vim Reload current file
-
-Just use `:e`
-
 # Bash multiple conditions and `[[` and `((` in if-condition
 
 [Bash Multiple Conditions](https://stackoverflow.com/a/20263097)
