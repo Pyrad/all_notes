@@ -129,22 +129,6 @@ How to install & use powerline in shell
 
 [https://tldp.org/LDP/abs/html/parameter-substitution.html](https://tldp.org/LDP/abs/html/parameter-substitution.html)
 
-# To disable cursor blinking in Windows Terminal
-
-For bash/zsh
-
-Putting the following at the end of your .bashrc/.zshrc file
-
-```bash
-echo -e -n "\e[2 q"
-```
-
-For PowerShell
-
-```powershell
-Write-Host -NoNewLine "`e[2 q"
-```
-
 # MSYS2 on Windows - Backspace works abnormally
 
 Each hit of `backspace` produces a space and make the cursor move right, which is really a dealbreaker.
