@@ -330,10 +330,6 @@ Floor is yours, it means: You have the right to speak now! Say what you want!
 
 [RMS's gdb Debugger Tutorial](http://www.unknownroad.com/rtfm/gdbtut/)
 
-# Git repo control line ending styles
-
-[Git End-of-Line Issues](https://learn.openwaterfoundation.org/owf-learn-git/eol/)
-
 # Latex Use backslash itself
 
 A example using backslash in a matrx (latex syntax)
