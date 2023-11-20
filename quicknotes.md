@@ -251,9 +251,7 @@ Floor is yours, it means: You have the right to speak now! Say what you want!
 > 
 > I put favicon.ico in my source folder, next to my .rst-files and it is working as expected: https://global-coffee-data-standard.readthedocs.io/en/latest/index.html
 
-# CMake 正确链接动态库
 
-[CMake如何做到正确链接动态库so？ - Lion Long的回答 - 知乎](https://www.zhihu.com/question/489682173/answer/2873091122)
 
 # Bentley-Ottmann Sweep line algorithm
 
