@@ -239,9 +239,7 @@ https://xmsoushu.com/#/
 
 Floor is yours, it means: You have the right to speak now! Say what you want!
 
-# Latex Math Symbols
 
-[List of LaTeX mathematical symbols](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)
 
 # Latex Use backslash itself
 
