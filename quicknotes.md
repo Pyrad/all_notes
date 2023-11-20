@@ -269,43 +269,12 @@ Floor is yours, it means: You have the right to speak now! Say what you want!
 
 # Latex Use backslash itself
 
-A example using backslash in a matrx (latex syntax)
+A example using backslash in a matrix (latex syntax)
 
 $$
 \begin{matrix}
 \alpha & \backslash{alpha} & \beta & \backslash{beta} &
 \gamma & \backslash{gamma} & \delta & \backslash{delta} \\
-\end{matrix}
-$$
-
-# Greek Alphabet in Latex
-
-$$
-\begin{matrix}
-A\alpha & A, \backslash{alpha} &
-B\beta & B, \backslash{beta} \\
-\Gamma\gamma & \backslash{Gamma}, \backslash{gamma} &
-\Delta\delta & \backslash{Delta}, \backslash{delta} \\
-E\epsilon & E, \backslash{epsilon} &
-Z\zeta& Z, \backslash{zeta} \\
-H\eta & H, \backslash{eta} &
-\Theta\theta & \backslash{Theta}, \backslash{theta} \\
-I\iota & I, \backslash{iota} &
-K\kappa & K,\backslash{kappa}\\
-\Lambda\lambda & \backslash{Lambda}, \backslash{lambda} &
-M\mu & M, \backslash{mu} \\
-N\nu & N, \backslash{nu} &
-\Xi\xi & \backslash{Xi}, \backslash{xi} \\
-O\omicron & O, \backslash{omicron} &
-\Pi\pi&  \backslash{Pi}, \backslash{pi} \\
-P\rho & P, \backslash{rho} &
-\Sigma\sigma &  \backslash{Sigma}, \backslash{sigma} \\
-T\tau & T, \backslash{tau} &
-\Upsilon\upsilon &  \backslash{Upsilon}, \backslash{upsilon } \\
-\Phi\phi & \backslash{Phi}, \backslash{phi} &
-X\chi &  X, \backslash{chi } \\
-\Psi\psi & \backslash{Psi}, \backslash{psi} &
-\Omega\omega &   \backslash{Omega}, \backslash{omega}
 \end{matrix}
 $$
 
@@ -330,5 +299,4 @@ $$
 # Bash multiple conditions and `[[` and `((` in if-condition
 
 [Bash Multiple Conditions](https://stackoverflow.com/a/20263097)
-
 
