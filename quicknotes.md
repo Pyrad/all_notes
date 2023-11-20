@@ -243,14 +243,6 @@ https://xmsoushu.com/#/
 
 
 
-# C++ Macro Expansion
-
-Use `-E` option of `gcc/g++`.
-
-```shell
-g++ -E source_file.cpp > source_file_preprocess_out.cpp
-```
-
 # Word
 
 Floor is yours, it means: You have the right to speak now! Say what you want!
