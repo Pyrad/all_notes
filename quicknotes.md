@@ -137,10 +137,6 @@ Possible solutions in this discussion: [Arrow keys and backspace not working in 
 
 
 
-# CMake Workshop
-
-[Detecting your environment](https://enccs.github.io/cmake-workshop/environment/)
-
 # Github 加速
 
 [github访问加速](https://zhuanlan.zhihu.com/p/75994966?utm_source=wechat_session)
