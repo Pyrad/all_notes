@@ -84,12 +84,6 @@ http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/object-orien
 
 
 
-# Vim frequently used commands
-
-[link](http://blog.chinaunix.net/uid-20769502-id-112737.html)
-
-[link2](https://www.zhihu.com/question/27478597/answer/36837839)
-
 # 欧路词典词库
 
 [https://mdx.mdict.org/](https://mdx.mdict.org/)
