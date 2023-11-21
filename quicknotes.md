@@ -106,12 +106,6 @@ How to install & use powerline in shell
 
 [https://tldp.org/LDP/abs/html/parameter-substitution.html](https://tldp.org/LDP/abs/html/parameter-substitution.html)
 
-# MSYS2 on Windows - Backspace works abnormally
-
-Each hit of `backspace` produces a space and make the cursor move right, which is really a dealbreaker.
-
-Possible solutions in this discussion: [Arrow keys and backspace not working in bash after recent update](https://github.com/msys2/MSYS2-packages/issues/1124)
-
 
 
 # Github 加速
