@@ -228,7 +228,3 @@ Floor is yours, it means: You have the right to speak now! Say what you want!
 
 [Bentley-Ottmann Sweep line algorithm](https://github.com/ideasman42/isect_segments-bentley_ottmann)
 
-# Bash multiple conditions and `[[` and `((` in if-condition
-
-[Bash Multiple Conditions](https://stackoverflow.com/a/20263097)
-
