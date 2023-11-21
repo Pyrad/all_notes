@@ -55,9 +55,7 @@ vscode.cdn.azure.cn <--------就是左边这个
 用过mingw在线安装的看到这个估计会很开心吧
 软件仓库：http://files.1f0.de/mingw/
 
-# gvim
 
-官网：https://www.vim.org/download.php
 
 # msys2
 
