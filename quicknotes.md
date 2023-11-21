@@ -102,10 +102,6 @@ How to install & use powerline in shell
 
 [使用nerd-font/font-patcher为字体添加字体图标](https://zhuanlan.zhihu.com/p/150097941)
 
-# Shell - parameter substitution
-
-[https://tldp.org/LDP/abs/html/parameter-substitution.html](https://tldp.org/LDP/abs/html/parameter-substitution.html)
-
 
 
 # Github 加速
