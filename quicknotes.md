@@ -112,9 +112,7 @@ https://samroeca.com/coc-plugin.html#coc-plugin
 
 https://stackoverflow.com/questions/24858014/checking-the-code-generated-implicitly-by-the-c-compiler
 
-# How can I see parse tree, intermediate code, optimization code and assembly code during COMPILATION?
 
-https://stackoverflow.com/questions/1496497/how-can-i-see-parse-tree-intermediate-code-optimization-code-and-assembly-code
 
 # How to make vim for win32 - Yongwei
 
