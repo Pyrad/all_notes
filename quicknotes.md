@@ -50,11 +50,6 @@ vscode.cdn.azure.cn <--------就是左边这个
 例如更新后的地址为：https://vscode.cdn.azure.cn/stable/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/code_1.52.1-1608136922_amd64.deb
 这个就是国内的镜像了点开后你会发现速度直接起飞。
 
-# mingw
-
-用过mingw在线安装的看到这个估计会很开心吧
-软件仓库：http://files.1f0.de/mingw/
-
 
 
 # msys2
