@@ -74,13 +74,7 @@ http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/object-orien
 
 [https://mdx.mdict.org/](https://mdx.mdict.org/)
 
-# Linux Powerline for Shell
 
-How to install & use powerline in shell
-
-- http://www.2daygeek.com/powerline-adds-powerful-statusline-to-vim-bash-tumx-in-ubuntu-fedora-debian-arch-linux-mint/
-
-- https://linux.cn/article-8651-1.html (translated to Chinese)
 
 # Git-bash powerline
 
