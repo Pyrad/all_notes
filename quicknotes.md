@@ -76,14 +76,6 @@ http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/object-orien
 
 
 
-# Git-bash powerline
-
-[为 Git Bash 设置 PowerLine](https://zhuanlan.zhihu.com/p/402739037)
-
-[使用nerd-font/font-patcher为字体添加字体图标](https://zhuanlan.zhihu.com/p/150097941)
-
-
-
 # Github 加速
 
 [github访问加速](https://zhuanlan.zhihu.com/p/75994966?utm_source=wechat_session)
@@ -111,12 +103,6 @@ https://stackoverflow.com/questions/24858014/checking-the-code-generated-implici
 # How to make vim for win32 - Yongwei
 
 https://github.com/adah1972/vim/wiki
-
-# Pass clangd args to YouCompleteMe
-
-```vim
-let g:ycm_clangd_args = ['--query-driver=' .. '/depot/gcc-7.3.0/bin/g++']
-```
 
 
 
