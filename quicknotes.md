@@ -188,3 +188,11 @@ Floor is yours, it means: You have the right to speak now! Say what you want!
 
 [Bentley-Ottmann Sweep line algorithm](https://github.com/ideasman42/isect_segments-bentley_ottmann)
 
+# maxdirsize
+
+[What is maxdirsize](https://kb.netapp.com/onprem/ontap/os/What_is_maxdirsize)
+
+Maxdirsize determines the number of files a directory can hold.
+
+The default value of `maxdirsize` is 320M, which is 320\*1024\*1024=335544320.
+
