@@ -199,3 +199,5 @@ The default value of `maxdirsize` is 320M, which is 320\*1024\*1024=335544320.
 # Foreign Function Interface
 
 A foreign function interface (FFI) is a mechanism by which a program written in one programming language can call routines or make use of services written or compiled in another one. An FFI is often used in contexts where calls are made into binary dynamic-link library.
+
+[Foreign Function Interface - Wikipedia](https://en.wikipedia.org/wiki/Foreign_function_interface)
