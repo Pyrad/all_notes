@@ -112,9 +112,7 @@ https://github.com/adah1972/vim/wiki
 
 https://www.zhihu.com/question/65306462/answer/2603110780
 
-# 瑞泽家园样板间地址
 
-用友软件园西区1C#楼2段北
 
 # 百度网盘搜索 - 知乎文章
 
