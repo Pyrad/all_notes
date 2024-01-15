@@ -202,9 +202,5 @@ A foreign function interface (FFI) is a mechanism by which a program written in 
 
 [Foreign Function Interface - Wikipedia](https://en.wikipedia.org/wiki/Foreign_function_interface)
 
-# Build a python package with setup.py in CMake
-
-[Build a python package with setup.py in CMake - StackOverflow](https://stackoverflow.com/questions/29232614/build-a-python-package-with-setup-py-in-cmake)
-
 
 
