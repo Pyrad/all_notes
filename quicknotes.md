@@ -200,5 +200,9 @@ A foreign function interface (FFI) is a mechanism by which a program written in 
 
 [Foreign Function Interface - Wikipedia](https://en.wikipedia.org/wiki/Foreign_function_interface)
 
+# Python setuptool for automation
+
+[https://www.youtube.com/watch?v=Yt-UF7fNLJE](https://www.youtube.com/watch?v=Yt-UF7fNLJE)
+
 
 
