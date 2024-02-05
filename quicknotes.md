@@ -204,5 +204,11 @@ A foreign function interface (FFI) is a mechanism by which a program written in 
 
 [https://www.youtube.com/watch?v=Yt-UF7fNLJE](https://www.youtube.com/watch?v=Yt-UF7fNLJE)
 
+# Makefile to check OS type
 
+```makefile
+ifeq ($(OS), Windows_NT)
+else
+endif
+```
 
