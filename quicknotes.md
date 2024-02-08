@@ -212,3 +212,8 @@ else
 endif
 ```
 
+# Router OS Software Tutorial - OpenWrt Tutrial
+
+[https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf](https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf)
+
+
