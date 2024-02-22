@@ -322,3 +322,47 @@ TypeError: expected string or buffer
 ```
 
 
+## GDB Python Pretty-Printer中查看C++变量类型的操作
+
+以`std::unique_ptr`对应的pretty printer为例。
+
+在`$GCC_DIR/python/libstdcxx/v6/printers.py`中，对`std::unique_ptr`有如下对应的Python类处理代码。
+
+```python
+class UniquePointerPrinter:
+  "Print a unique_ptr"
+
+  def __init__ (self, typename, val):
+    self.val = val
+
+  def to_string (self):
+    impl_type = self.val.type.fields()[0].type.tag
+    if is_specialization_of(impl_type, '__uniq_ptr_impl'): # New implementation
+      v = self.val['_M_t']['_M_t']['_M_head_impl']
+    elif is_specialization_of(impl_type, 'tuple'):
+      v = self.val['_M_t']['_M_head_impl']
+    else:
+      raise ValueError("Unsupported implementation for unique_ptr: %s" % self.val.type.fields()[0].type.tag)
+    return 'std::unique_ptr<%s> containing %s' % (str(v.type.target()), str(v))
+```
+
+在函数`to_string()`中，
+
+- `self.val`的类型是`gdb.Value`，它用来表示当前gdb session中一个对应的C/C++ object，这样以便在Python中访问。关于这个类，可以查看gnu gdb手册中*Extending GDB*这一章关于`gdb.Value`类和其上的成员的说明。
+
+- `self.val.type`返回的是一个类型为`gdb.Type`的object。
+
+- `self.val.type.fields()`返回的是一个Python `list` object，其中每个元素都是一个`gdb.Field`的object，可以查看手册中`gdb.Type`的说明。
+
+- `self.val.type.fields()[0]`返回一个`gdb.Field` object
+
+- `self.val.type.fields()[0].type`返回一个`gdb.Field` object上的`type`成员，它也是一个`gdb.Type`类型的对象。
+
+- `self.val.type.fields()[0].type.tag`返回的是这个`gdb.Type`类型的`tag`（实际上就是一个字符串），手册中说它是*The tag name for this type. The tag name is the name after struct, union, or enum in C and C++*，也就是关键字`class`后面那个的名字。
+  
+  需要注意的是，有时候这个`tag`会返回一个`None`，在`std::unique_ptr`的pretty printer中我就遇到这个问题。这种情况下，我的临时办法是使用`self.val.type.fields()[0].type.name`，它返回的也是一个Python字符串，它类似于这样：`std::unique_ptr<XXXXX>::__tuple_type`。
+  
+  然后根据这个返回的名字字符串做判断。
+
+
+
