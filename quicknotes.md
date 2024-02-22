@@ -217,3 +217,31 @@ endif
 [https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf](https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf)
 
 
+## GDB Python
+
+### Pretty Printer
+
+为了使用STL的**pretty-printer**，需要把对应版本的gcc目录下面`libstdcxx`拷贝到某个专门给GDB使用的目录，然后在`~/.gdbinit`中加入对应的Python代码以便生效。
+
+比如，把gcc-7.3.0中的`libstdcxx`拷贝到`~/scripts/python.utilities/PythonGdb`中：
+
+```bash
+cp -rf ${GCC_DIR}/python/libstdcxx/ ~/scripts/python.utilities/PythonGdb/libstdcxx
+```
+
+然后在`~/.gdbinit`中加入如下代码
+
+```python
+handle SIG35 noprint nostop
+
+#------------------------------------------------------------
+# Import the pretty-printer module from a local backup dir
+#------------------------------------------------------------
+python
+import sys
+sys.path.insert(0, '~/scripts/python.utilities/PythonGdb')
+from libstdcxx.v6.printers import register_libstdcxx_printers
+register_libstdcxx_printers(None)
+end
+```
+
