@@ -217,9 +217,9 @@ endif
 [https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf](https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf)
 
 
-## GDB Python
+# GDB Python
 
-### Pretty Printer
+## Pretty Printer
 
 为了使用STL的**pretty-printer**，需要把对应版本的gcc目录下面`libstdcxx`拷贝到某个专门给GDB使用的目录，然后在`~/.gdbinit`中加入对应的Python代码以便生效。
 
@@ -245,3 +245,31 @@ register_libstdcxx_printers(None)
 end
 ```
 
+
+## 查看编译GDB时的配置信息(Python)
+
+可以使用`--configuration`参数进行查看
+
+```bash
+gdb --configuration
+```
+
+## gdb中执行Python script
+
+编写Python script，**并且**以`.py`作为后缀。
+
+然后在gdb中直接source即可
+
+```gdb
+(gdb) source myPyCmds.py
+```
+
+也可直接在gdb中键入命令`py`，进入Python prompt，输入Python代码结束之后，以`end`结尾并回车，即可执行输入的Python代码。
+
+```gdb
+(gdb) py
+> import gdb
+> val = gdb.Value(0)
+> end
+(gdb)
+```
