@@ -273,3 +273,52 @@ gdb --configuration
 > end
 (gdb)
 ```
+
+
+## 从gdb当前session中的variable创建对应的`gdb.Value` object
+
+gdb提供了Python module `gdb`，可以直接import进来。
+
+使用`gdb`这个module提供的API `parse_and_eval()`，参数是当前gdb session中的变量对应的名字（字符串），返回的值是一个`gdb.Value` object。
+
+```python
+cxx_var_name_str = "my_cxx_symbol"
+val = gdb.parse_and_eval(cxx_var_name_str )
+```
+
+## GDB Pretty-Printer中显示错误的Python stack
+
+在使用pretty-printer的时候，如果发生错误，可能只显示简短的异常信息，例如，
+
+```gdb
+(gdb) p uptr_var
+$112 = Python Exception <type 'exceptions.TypeError'> expected string or buffer:
+```
+
+如果要查看更多信息，需要在gdb中设置`set pyathon print-stack [full|message]`：
+
+```gdb
+(gdb) set python print-stack full
+```
+
+然后就可以打印并查看更详细的错误信息，
+
+```gdb
+(gdb) p overflow_filter
+$113 = Traceback (most recent call last):
+  File "$TO_GDB_PYTHON_DIR/libstdcxx/v6/printers.py", line 144, in to_string
+    if is_specialization_of(impl_type, '__uniq_ptr_impl'): # New implementation
+  File "$TO_GDB_PYTHON_DIR/libstdcxx/v6/printers.py", line 108, in is_specialization_of
+    return re.match('^std::(%s)?%s<.*>$' % (_versioned_namespace, template_name), type) is not None
+  File "$PYTHON_DIR/lib/python2.6/re.py", line 137, in match
+    return _compile(pattern, flags).match(string)
+TypeError: expected string or buffer
+```
+
+可以在查看详细信息之后，把显示方式改回默认值：
+
+```gdb
+(gdb) set python print-stack message
+```
+
+
