@@ -432,3 +432,7 @@ class foo(object):
     self.__dict__["data"] = dict()
 ```
 
+# Build a python package with setup.py in CMake
+
+[Build a python package with setup.py in CMake - Stack Overflow](https://stackoverflow.com/questions/29232614/build-a-python-package-with-setup-py-in-cmake)
+
