@@ -196,16 +196,6 @@ endif
 
 [https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf](https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf)
 
-# GDB show current loaded symbol
-
-Check the `main` function located in which symbol/binary
-
-```gdb
-info symbol main
-```
-
-reference: [https://visualgdb.com/gdbreference/commands/info_symbol](https://visualgdb.com/gdbreference/commands/info_symbol)
-
 
 
 
