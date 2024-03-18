@@ -197,21 +197,3 @@ endif
 [https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf](https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf)
 
 
-
-
-# Vim - Python: Jump to the begin/end of function/block
-
-[https://vi.stackexchange.com/questions/7262/end-of-python-block-motion](https://vi.stackexchange.com/questions/7262/end-of-python-block-motion)
-
-
-# VSCode - Mark all files in a folder as read-only
-
-Prerequisite - VS Code version >= 1.79
-
-1. Open setting pane: "Preferences: Open Settings (UI)"
-2. Search keyword "read only"
-3. Add pattern to "Files: Readonly Include"
-4. To mark all files in a directory recursively, use 2 wild chars `*`, for example, `C:/path/to/a/root/directory/**`.
-5. If only ONE wild char `*` is used, for example, `C:/path/to/a/root/directory/*`, only files in `C:/path/to/a/root/directory` is marked as read-only, the files in its sub-directories are NOT marked as read-only.
-
-
