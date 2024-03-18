@@ -199,5 +199,8 @@ endif
 
 
 
+# Vim - Python: Jump to the begin/end of function/block
+
+[https://vi.stackexchange.com/questions/7262/end-of-python-block-motion](https://vi.stackexchange.com/questions/7262/end-of-python-block-motion)
 
 
