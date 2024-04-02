@@ -218,9 +218,6 @@ endif
   ```shell
   tar -xf xxx.tar
 
-# Heroes of Might and Magic IV Overview
-[Heroes of Might and Magic IV Overview](http://www.heroesofmightandmagic.com/heroes4/heroesofmightandmagic4iv.shtml)
-
 
 # config文件对应的coc snippet文件路径
 
