@@ -226,3 +226,10 @@ endif
 ```shell
 ~/.config/coc/ultisnippet/conf.snippets
 ```
+
+# Bash Reference Manual
+
+[Bash Reference Manual - gnu.org](https://www.gnu.org/software/bash/manual/html_node/index.html#SEC_Contents)
+
+
+
