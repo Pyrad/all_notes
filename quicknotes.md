@@ -90,10 +90,6 @@ https://samroeca.com/coc-plugin.html#coc-plugin
 
 https://stackoverflow.com/questions/24858014/checking-the-code-generated-implicitly-by-the-c-compiler
 
-# How to make vim for win32 - Yongwei
-
-https://github.com/adah1972/vim/wiki
-
 # Use GDB in Geany
 
 [The Geany](https://www.geany.org/)
@@ -195,41 +191,6 @@ endif
 # Router OS Software Tutorial - OpenWrt Tutrial
 
 [https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf](https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf)
-
-# Learning GDB Notes
-
-[https://blog.csdn.net/kafeiflynn/article/details/6712888](https://blog.csdn.net/kafeiflynn/article/details/6712888)
-
-# Decompress a `xxx.tar.bz2` file
-
-- 首先解压成一个 `.tar`格式的打包文件
-
-  ```shell
-  bzip2 -dk xxx.tar.bz2
-  ```
-
-  注意这里的`-d`表示decompress，而`-k`表示保留原先的`.bz2`文件。
-  如果不添加`-k`选项，原先的`.bz2`文件，在解压之后会被自动删除。
-
-  这个命令会生成一个对应的打包文件：`xxx.tar`
-
-- 然后再使用`tar`命令提取打包文件即可。
-
-  ```shell
-  tar -xf xxx.tar
-
-
-# config文件对应的coc snippet文件路径
-
-一般，coc对应的snippet文件是：
-
-```shell
-~/.config/coc/ultisnippet/conf.snippets
-```
-
-# Bash Reference Manual
-
-[Bash Reference Manual - gnu.org](https://www.gnu.org/software/bash/manual/html_node/index.html#SEC_Contents)
 
 
 
