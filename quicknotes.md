@@ -206,6 +206,8 @@ endif
 
 [Python `if x is not None` or `if not x is None`? - StackOverflow](https://stackoverflow.com/questions/2710940/python-if-x-is-not-none-or-if-not-x-is-none)
 
+# Patch file explained
 
+[What is the format of a patch file? - Stack Overflow](https://stackoverflow.com/questions/987372/what-is-the-format-of-a-patch-file)
 
 
