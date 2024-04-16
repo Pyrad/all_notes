@@ -193,8 +193,3 @@ endif
 [https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf](https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf)
 
 
-# Patch file explained
-
-[What is the format of a patch file? - Stack Overflow](https://stackoverflow.com/questions/987372/what-is-the-format-of-a-patch-file)
-
-
