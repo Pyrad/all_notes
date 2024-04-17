@@ -193,3 +193,12 @@ endif
 [https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf](https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf)
 
 
+# Shell read file line by line
+
+```shell
+fname="myfile.txt"
+while IFS= read -r line; do
+  echo "$line"
+done < $fname
+```
+
