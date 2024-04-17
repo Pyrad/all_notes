@@ -86,10 +86,6 @@ https://samroeca.com/coc-plugin.html#coc-plugin
 
 [gcc.godbolt.org](https://gcc.godbolt.org)
 
-# Checking the code generated implicitly by the C++ compiler
-
-https://stackoverflow.com/questions/24858014/checking-the-code-generated-implicitly-by-the-c-compiler
-
 # Use GDB in Geany
 
 [The Geany](https://www.geany.org/)
@@ -162,24 +158,6 @@ Floor is yours, it means: You have the right to speak now! Say what you want!
 
 [Bentley-Ottmann Sweep line algorithm](https://github.com/ideasman42/isect_segments-bentley_ottmann)
 
-# maxdirsize
-
-[What is maxdirsize](https://kb.netapp.com/onprem/ontap/os/What_is_maxdirsize)
-
-Maxdirsize determines the number of files a directory can hold.
-
-The default value of `maxdirsize` is 320M, which is 320\*1024\*1024=335544320.
-
-# Foreign Function Interface
-
-A foreign function interface (FFI) is a mechanism by which a program written in one programming language can call routines or make use of services written or compiled in another one. An FFI is often used in contexts where calls are made into binary dynamic-link library.
-
-[Foreign Function Interface - Wikipedia](https://en.wikipedia.org/wiki/Foreign_function_interface)
-
-# Python setuptool for automation
-
-[https://www.youtube.com/watch?v=Yt-UF7fNLJE](https://www.youtube.com/watch?v=Yt-UF7fNLJE)
-
 # Makefile to check OS type
 
 ```makefile
@@ -193,12 +171,4 @@ endif
 [https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf](https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf)
 
 
-# Shell read file line by line
-
-```shell
-fname="myfile.txt"
-while IFS= read -r line; do
-  echo "$line"
-done < $fname
-```
 
