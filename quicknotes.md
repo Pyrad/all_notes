@@ -158,14 +158,6 @@ Floor is yours, it means: You have the right to speak now! Say what you want!
 
 [Bentley-Ottmann Sweep line algorithm](https://github.com/ideasman42/isect_segments-bentley_ottmann)
 
-# Makefile to check OS type
-
-```makefile
-ifeq ($(OS), Windows_NT)
-else
-endif
-```
-
 # Router OS Software Tutorial - OpenWrt Tutrial
 
 [https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf](https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf)
