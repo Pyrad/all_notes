@@ -159,9 +159,5 @@ https://xmsoushu.com/#/
 
 [https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf](https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf)
 
-# GDB watch std::vector
-
-[How to "watch" the size of a C++ std::vector in gdb? - StackOverflow](https://stackoverflow.com/questions/8249048/how-to-watch-the-size-of-a-c-stdvector-in-gdb)
-
 
 
