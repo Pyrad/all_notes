@@ -25,40 +25,66 @@ pip install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.ali
 # Git for Windows downloads：
 
 官网：https://github.com/git-for-windows/git/releases/
+
 淘宝网镜像：http://npm.taobao.org/mirrors/git-for-windows/
 
 ## Github国内镜像
 
 解决Github访问的神器
+
+```
 https://github.com.cnpmjs.org/
 https://hub.fastgit.org/
 https://github.wuyanzheshui.workers.dev/
+```
 
 # kernel.org国内镜像
 
-北京交通大学：https://mirror.bjtu.edu.cn/kernel/linux/kernel/
-清华大学：https://mirror.tuna.tsinghua.edu.cn/kernel/
-南京大学：https://mirrors.nju.edu.cn/
+北京交通大学
+
+
+[https://mirror.bjtu.edu.cn/kernel/linux/kernel/](https://mirror.bjtu.edu.cn/kernel/linux/kernel/)
+
+
+清华大学
+
+[https://mirror.tuna.tsinghua.edu.cn/kernel/](https://mirror.tuna.tsinghua.edu.cn/kernel/)
+
+南京大学
+
+[https://mirrors.nju.edu.cn/](https://mirrors.nju.edu.cn/)
 
 # vscode
 
-官网：https://code.visualstudio.com/#alt-downloads
+官网：[https://code.visualstudio.com/#alt-downloads](https://code.visualstudio.com/#alt-downloads)
+
 官网下载速度有时候快有时候慢。
+
 首先在官网找到需要下载的文件，点击下载。
+
 复制载地址，然后将域名的部分更换为如下内容：
-vscode.cdn.azure.cn <--------就是左边这个
-例如更新后的地址为：https://vscode.cdn.azure.cn/stable/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/code_1.52.1-1608136922_amd64.deb
+
+```
+vscode.cdn.azure.cn
+```
+
+例如更新后的地址为
+
+```
+https://vscode.cdn.azure.cn/stable/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/code_1.52.1-1608136922_amd64.deb
+```
+
 这个就是国内的镜像了点开后你会发现速度直接起飞。
 
 # How-to ReadTheDoc articles
 
-https://www.jianshu.com/p/058440ed14df
+[https://www.jianshu.com/p/058440ed14df](https://www.jianshu.com/p/058440ed14d)
 
-https://zhuanlan.zhihu.com/p/380889131
+[https://zhuanlan.zhihu.com/p/380889131](https://zhuanlan.zhihu.com/p/380889131)
 
 # Gitee笔记首页示例
 
-http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/object-oriented-vs-procedure-oriented
+[http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/object-oriented-vs-procedure-oriented](http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/object-oriented-vs-procedure-oriented)
 
 # Sphnix + reStructuredText + ReadTheDocs Tutorial
 
@@ -76,7 +102,7 @@ http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/object-orien
 
 [Sam's world](https://samroeca.com/)
 
-https://samroeca.com/coc-plugin.html#coc-plugin
+[https://samroeca.com/coc-plugin.html#coc-plugin](https://samroeca.com/coc-plugin.html#coc-plugin)
 
 # GitHub Speedup (diff ways)
 
@@ -90,7 +116,7 @@ https://samroeca.com/coc-plugin.html#coc-plugin
 
 [The Geany](https://www.geany.org/)
 
-https://www.zhihu.com/question/65306462/answer/2603110780
+[https://www.zhihu.com/question/65306462/answer/2603110780](https://www.zhihu.com/question/65306462/answer/2603110780)
 
 # 百度网盘搜索 - 知乎文章
 
