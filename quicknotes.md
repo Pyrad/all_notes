@@ -98,12 +98,6 @@ https://vscode.cdn.azure.cn/stable/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/code
 
 [github访问加速](https://zhuanlan.zhihu.com/p/75994966?utm_source=wechat_session)
 
-# How to write a coc.nvim extension
-
-[Sam's world](https://samroeca.com/)
-
-[https://samroeca.com/coc-plugin.html#coc-plugin](https://samroeca.com/coc-plugin.html#coc-plugin)
-
 # GitHub Speedup (diff ways)
 
 [Github加速的10种方式](https://www.cnblogs.com/shuangxinyuan/p/15506449.html)
