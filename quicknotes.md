@@ -128,17 +128,6 @@ https://vscode.cdn.azure.cn/stable/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/code
 
 [Homebrew 国内使用加速](https://www.cnblogs.com/cocowool/p/speedup-homebrew.html)
 
-# Doxygen - How to create a doxygen doc for C++ STL?
-
-https://www.doxygen.nl/manual/external.html
-
-https://en.cppreference.com/w/Cppreference:Archives
-
-https://flcwiki.desy.de/How%20to%20document%20your%20code%20using%20doxygen
-
-# English word check
-
-[linggle](https://linggle.com/)
 
 # Z-library how-to-find
 
