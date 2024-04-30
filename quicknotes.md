@@ -154,3 +154,9 @@ https://xmsoushu.com/#/
 # Router OS Software Tutorial - OpenWrt Tutrial
 
 [https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf](https://youtu.be/L5XyXAfJhGc?si=-q14mao3WISQ3BCf)
+
+
+# Words
+
+At the outset 在开始时：在某个活动、计划或过程的最初阶段或起始点。
+
