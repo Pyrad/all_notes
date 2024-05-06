@@ -160,17 +160,3 @@ https://xmsoushu.com/#/
 
 At the outset 在开始时：在某个活动、计划或过程的最初阶段或起始点。
 
-
-# Bash - 删除文件特定列
-
-删除第3至最后所有列
-
-```shell
-cut -d " " -f 3- my_file.txt
-```
-
-删除第3至第12列
-
-```shell
-cut -d " " -f 3-12 my_file.txt
-```
