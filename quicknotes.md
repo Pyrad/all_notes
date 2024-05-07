@@ -160,3 +160,8 @@ https://xmsoushu.com/#/
 
 At the outset 在开始时：在某个活动、计划或过程的最初阶段或起始点。
 
+# Bash - awk 截取最后几列
+
+```shell
+awk '{print $(NF-1), $NF}' tmptest.info
+```
