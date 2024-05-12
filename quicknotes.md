@@ -138,43 +138,5 @@ https://xmsoushu.com/#/
 
 At the outset 在开始时：在某个活动、计划或过程的最初阶段或起始点。
 
-# Vim - Using printf() in substituation
 
-[Using vim's printf in a substitution - Stack Overflow](https://stackoverflow.com/questions/41330466/using-vims-printf-in-a-substitution)
-
-```vim
-:%s/\(\d\+\)\/\(\d\+\)\/\(\d\+\)/\=printf('%d-%02d-%02d 00:00:00', submatch(3), submatch(1), submatch(2))/
-```
-
-再比如，得到当前行行号，并插入到替换之后的字符串中去。
-
-```vim
-262,1869s/\(^\S.*\s\+{\)/\=printf("%s LTPRINT(%d);", submatch(1), line('.'))/gc
-```
-
-这个命令，会把如下的字符串
-
-```shell
-[ \t]*\n            {
-<sanity_check>.*    {
-```
-
-替换成如下的形式，
-
-```shell
-[ \t]*\n            { LTPRINT(31);
-<sanity_check>.*    { LTPRINT(32);
-```
-
-这里的 `LTPRINT` 实际上是一个 macro，如下，
-
-```cpp
-#define LTPRINT(x) fprintf(p3stdout, "[LTM] %s\n", x)
-```
-
-# Flex & Bison by John Levine
-
-[Flex & Bison - John Levine](https://web.iitd.ac.in/~sumeet/flex__bison.pdf)
-
-[Compiler Construction using Flex and Bison](https://www.admb-project.org/tools/flex/compiler.pdf)
 
