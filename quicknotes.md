@@ -139,4 +139,13 @@ https://xmsoushu.com/#/
 At the outset 在开始时：在某个活动、计划或过程的最初阶段或起始点。
 
 
+# CUDA Doc
+
+[如何学习cuda编程？ - 神经旷野舞者的回答 - 知乎](https://www.zhihu.com/question/62996995/answer/3489398460)
+
+[CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html)
+
+[CUDA Toolkit Documentation 12.4 Update 1](https://docs.nvidia.com/cuda/)
+
+[CUDA C++ Programming Guide - PDF](https://docs.nvidia.com/cuda/pdf/CUDA_C_Programming_Guide.pdf)
 
