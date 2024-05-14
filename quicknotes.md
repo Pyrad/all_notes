@@ -138,6 +138,8 @@ https://xmsoushu.com/#/
 
 At the outset 在开始时：在某个活动、计划或过程的最初阶段或起始点。
 
+harking back to 回想或回到过去的某个事物或时期
+
 
 # CUDA Doc
 
