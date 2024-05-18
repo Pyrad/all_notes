@@ -160,3 +160,6 @@ harking back to 回想或回到过去的某个事物或时期
 
 [Cython 是什么？为什么会有 Cython？](https://blog.csdn.net/chinesehuazhou2/article/details/125252492)
 
+# Springer Freed Books
+
+[Springer Freed Books (how to get)](https://blog.csdn.net/chinesehuazhou2/article/details/105886797?spm=1001.2014.3001.5502)
