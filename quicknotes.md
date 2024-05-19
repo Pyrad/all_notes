@@ -172,3 +172,6 @@ harking back to 回想或回到过去的某个事物或时期
 
 [SageMath - GitHub](https://github.com/sagemath/sage)
 
+# NumPy, Cython and PyTorch convert to each other
+
+[numpy、cupy、pytorch数组对象的相互转换](https://blog.csdn.net/BigerBang/article/details/127904816)
