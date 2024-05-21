@@ -191,3 +191,7 @@ htop -u myUserName
 
 [PyTorch算子底层源码解读--Tensor - 硅仙人的文章 - 知乎](https://zhuanlan.zhihu.com/p/465696096)
 
+[Pytorch 源码阅读 —— Tensor C++相关实现](https://blog.csdn.net/Chris_zhangrx/article/details/119086815)
+
+[pytorch基于intrusive_ptr_target实现的核心数据结构介绍](https://blog.csdn.net/weixin_43969854/article/details/129348171)
+
