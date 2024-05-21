@@ -195,3 +195,4 @@ htop -u myUserName
 
 [pytorch基于intrusive_ptr_target实现的核心数据结构介绍](https://blog.csdn.net/weixin_43969854/article/details/129348171)
 
+[PyTorch项目源码学习（2）——Tensor代码结构初步学习 2024-01-10](https://blog.csdn.net/intmeX/article/details/135509288)
