@@ -186,3 +186,8 @@ After type the following command to show the process status, you could type `F1`
 htop -u myUserName
 ```
 
+
+# PyTorch算子底层源码解读--Tensor
+
+[PyTorch算子底层源码解读--Tensor - 硅仙人的文章 - 知乎](https://zhuanlan.zhihu.com/p/465696096)
+
