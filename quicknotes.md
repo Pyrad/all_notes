@@ -175,3 +175,14 @@ harking back to 回想或回到过去的某个事物或时期
 # NumPy, Cython and PyTorch convert to each other
 
 [numpy、cupy、pytorch数组对象的相互转换](https://blog.csdn.net/BigerBang/article/details/127904816)
+
+# Linux command htop
+
+Reference link [What exactly do the colors in htop status bars mean? - Stack Exchange](https://serverfault.com/questions/180711/what-exactly-do-the-colors-in-htop-status-bars-mean)
+
+After type the following command to show the process status, you could type `F1` or `h` to see the help doc.
+
+```shell
+htop -u myUserName
+```
+
