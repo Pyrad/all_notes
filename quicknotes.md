@@ -201,3 +201,11 @@ htop -u myUserName
 [PyTorch项目源码学习（2）——Tensor代码结构初步学习 2024-01-10](https://blog.csdn.net/intmeX/article/details/135509288)
 
 [PyTorch internals May 14, 2019](http://blog.ezyang.com/2019/05/pytorch-internals/)
+
+
+# Words
+
+on par with 和...（处于）同等水平
+
+
+
