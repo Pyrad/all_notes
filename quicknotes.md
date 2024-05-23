@@ -208,4 +208,50 @@ htop -u myUserName
 on par with 和...（处于）同等水平
 
 
+# Python code class inherits from a Boost.Python wrapped class to use its base class methods
+
+[Create derived python class from a c++ class using Boost Python - Stack Overflow](https://stackoverflow.com/questions/34404224/create-derived-python-class-from-a-c-class-using-boost-python)
+
+如果 class B 是一个Python实现的 class，而 class A 是由 Boost.Python wrapped 的class。
+
+如果 class B 继承了 class A，并且 在 B 中（或B的object对象）要使用 A 的函数（方法）等，如下写的方法会报错，
+
+```cpp
+BOOST_PYTHON_MODULE(libgla) {
+    using namespace boost::python;
+
+    // ...
+
+    class_<A_cpp_class>("A", init<>())
+            .def("check", &A_cpp_class::check_internal);
+
+    // ...
+};
+```
+
+```python
+class B(A):
+  def __init__(self):
+    self.foobar = 0
+
+  def debug(self):
+    self.check() # <------- Error will be reported !
+```
+
+原因是在 B 的初始化函数中，并没有调用 A 的初始化函数，导致 B 并不是一个合法的继承于 A 的class。
+
+所以 B 需要在 Python 中修改如下，
+
+```python
+class B(A):
+  def __init__(self):
+    A.__init__(self)  # <------ Should call A's initialization func
+    self.foobar = 0
+
+  def debug(self):
+    self.check() # <------- Now it's ok to call methods from the base class (A)
+```
+
+
+
 
