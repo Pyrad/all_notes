@@ -252,6 +252,11 @@ class B(A):
     self.check() # <------- Now it's ok to call methods from the base class (A)
 ```
 
+# Store C++ pointers as integers
+
+Short : use `std::uintptr_t` instead of `int`, `long`, ...
+
+[Converting a pointer into an integer - Stack Overflow](https://stackoverflow.com/questions/153065/converting-a-pointer-into-an-integer/26586211#26586211)
 
 
 
