@@ -259,4 +259,8 @@ Short : use `std::uintptr_t` instead of `int`, `long`, ...
 [Converting a pointer into an integer - Stack Overflow](https://stackoverflow.com/questions/153065/converting-a-pointer-into-an-integer/26586211#26586211)
 
 
+# Wrapped class by Boost.Python
 
+Boost Python Exposing C++ class with constructor taking a std::list
+
+[Boost Python Exposing C++ class with constructor taking a std::list](https://stackoverflow.com/questions/56290774/boost-python-exposing-c-class-with-constructor-taking-a-stdlist)
