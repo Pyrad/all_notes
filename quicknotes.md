@@ -264,3 +264,8 @@ Short : use `std::uintptr_t` instead of `int`, `long`, ...
 Boost Python Exposing C++ class with constructor taking a std::list
 
 [Boost Python Exposing C++ class with constructor taking a std::list](https://stackoverflow.com/questions/56290774/boost-python-exposing-c-class-with-constructor-taking-a-stdlist)
+
+# CMake - How to specify include paths
+
+[How to properly add include directories with CMake - Stack Overflow](https://stackoverflow.com/questions/13703647/how-to-properly-add-include-directories-with-cmake)
+
