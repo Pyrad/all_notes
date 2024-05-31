@@ -328,3 +328,9 @@ autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 " Restore default setting:
 :set guicursor&
 ```
+
+# 为什么要有 PyCapsule
+
+[Python Capsules - Bradly Froehle - ](https://bfroehle.com/2011/07/18/python-capsules/)
+
+看上去就是在一个Python module 中包装一个指针，然后可以在另一个Python module中使用它。
