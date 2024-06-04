@@ -334,3 +334,19 @@ autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 [Python Capsules - Bradly Froehle - ](https://bfroehle.com/2011/07/18/python-capsules/)
 
 看上去就是在一个Python module 中包装一个指针，然后可以在另一个Python module中使用它。
+
+# Linux diff & patch commands
+
+Apply diff from another file
+
+```shell
+path_to_file_A $ diff -u file_A file_B > mypatch.txt
+path_to_file_A $ patch -p0 < mypatch.txt
+```
+
+Apply diff to another file
+
+```shell
+path_to_file_A $ diff -u file_B file_A > mypatch.txt
+path_to_file_B $ patch -p0 < mypatch.txt
+```
