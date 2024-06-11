@@ -276,3 +276,11 @@ Boost Python Exposing C++ class with constructor taking a std::list
 
 看上去就是在一个Python module 中包装一个指针，然后可以在另一个Python module中使用它。
 
+# Microsoft ISO Download
+
+[https://zhuanlan.zhihu.com/p/694318994](https://zhuanlan.zhihu.com/p/694318994)
+
+
+
+
+
