@@ -294,4 +294,28 @@ Boost Python Exposing C++ class with constructor taking a std::list
 
 [有哪些算法惊艳到了你？ - Yixiao Huang的回答 - 知乎](https://www.zhihu.com/question/26934313/answer/3528590082)
 
+# 拷贝文件目录，但跳过其中的某些文件
+
+[How to use 'cp' command to exclude a specific directory? - StackOverflow](https://stackoverflow.com/questions/2193584/copy-folder-recursively-excluding-some-folders)
+
+[How can I use cp to copy a directory but ignore a certain sub directory in Linux - Stack Exchange](https://superuser.com/questions/151970/how-can-i-use-cp-to-copy-a-directory-but-ignore-a-certain-sub-directory-in-linux)
+
+```shell
+rsync -a source_dir target_dir --exclude mytemp --exclude mytemp2
+```
+
+其中 `--exclude` 后面的文件（或文件目录）名称，是相对于 `source_dir` 的相对路径，可以同时指定多个需要跳过拷贝的文件（或目录）。
+
+
+# Git 拉取错误 did not send all necessary objects
+
+[BitBucket Git Error: did not send all necessary objects - StackOverflow](https://stackoverflow.com/questions/8788975/bitbucket-git-error-did-not-send-all-necessary-objects)
+
+可以按照其中第一个回答，把报错的那个文件删除掉，然后再 `git pull` 即可
+
+```shell
+rm .git/refs/remotes/origin/<name of branch>
+```
+
+
 
