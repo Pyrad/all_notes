@@ -317,5 +317,64 @@ rsync -a source_dir target_dir --exclude mytemp --exclude mytemp2
 rm .git/refs/remotes/origin/<name of branch>
 ```
 
+# MSYS2 on Windows "Ctrl + D" doens't work issue
+
+在 Windows 的 MSYS2 中，在编译 flex 和 bison 程序时，
+出现了 `Ctrl` + `D` 不能中断输入（`EOF`）的现象，最终的解决办法是，
+
+- 首先把 MSYS2 升级到 2022-09-24 之后的版本，因为从这个版本起，启用了 `ConPTY`。
+  
+  [2022-09-24 - ConPTY support enabled by default - News - msys2.org](https://www.msys2.org/news/#2022-09-24-conpty-support-enabled-by-default)
+  
+  升级 MSYS2： [Updating MSYS2 - msys2.org](https://www.msys2.org/docs/updating/)
+  
+- 似乎是 Windows 下对按键的mapping不正确。
+
+  GitHub 上 `mintty` 有提及该问题。[pty problem - mintty commentted on Aug 26, 2016](https://github.com/mintty/mintty/issues/577#issuecomment-242513410)
+  
+  shula 这个人展示了他所观察到的几种按键是否起作用的结果：[shula commentted on Oct 6, 2022](https://github.com/mintty/mintty/issues/577#issuecomment-1269333282)
+  
+  > i'm on MINTTY 3.6.1 & MSYS2, and CTRL+d doesn't close the terminal, nor closes opened files.
+  > e.g.
+  > 
+  > bash$ cat > file.txt
+  > asdasd
+  > asdasd
+  > <Ctrl+D> -- nothing.
+  > 
+  > Other CTRL shortcuts do work as expected:
+  > CTRL+A: selected all text
+  > CTRL+F: toggled fullscreen
+  > CTRL+V: paste (my settings in .minttyrc: CtrlShiftShortcuts=yes)
+  > CTRL+C: nothing
+  > CTRL+D: (on empy line) nothing
+  > CTRL+Fn+B: "Quit (core dumped)" (but finally exited.
+
+- 同样是 `mintty` 这个人，提到在 cygwin ， msys2 以及 mintty 中要分别设定对应的环境变量来启用 ConPTY：
+
+  [CYGWIN=enable_pcon - mintty commented on Feb 5](https://github.com/mintty/mintty/issues/56#issuecomment-1926558993)
+  
+  [MSYS=enable_pcon - mintty commented on Feb 25](https://github.com/mintty/mintty/issues/56#issuecomment-1962490572)
+
+  - CYGWIN
+  
+    ```shell
+    export CYGWIN=enable_pcon
+    ```
+
+  - MSYS2
+  
+    ```shell
+    export MSYS=enable_pcon
+    ```
+
+  - mintty
+  
+    ```shell
+    echo ConPTY=on >> ~/.minttyrc
+    ```
+
+- 做完以上步骤之后，发现 `Ctrl` + `D` 仍然不能正常工作，但是 使用 `Ctrl` + `Z` ，然后按键 `Enter` ，好像就达到了 `Ctrl` + `D` 的效果。
+
 
 
