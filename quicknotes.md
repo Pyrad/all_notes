@@ -307,6 +307,8 @@ rsync -a source_dir target_dir --exclude mytemp --exclude mytemp2
 其中 `--exclude` 后面的文件（或文件目录）名称，是相对于 `source_dir` 的相对路径，可以同时指定多个需要跳过拷贝的文件（或目录）。
 
 
+# Coding Patterns for Python Extensions
 
+[Coding Patterns for Python Extensions - GitHub](https://pythonextensionpatterns.readthedocs.io/en/latest/index.html)
 
 
