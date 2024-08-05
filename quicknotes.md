@@ -311,4 +311,9 @@ rsync -a source_dir target_dir --exclude mytemp --exclude mytemp2
 
 [Coding Patterns for Python Extensions - GitHub](https://pythonextensionpatterns.readthedocs.io/en/latest/index.html)
 
+# Cheat sheet for apt
+
+[OSDC Cheat sheet - apt](https://opensource.com/sites/default/files/gated-content/osdc_cheatsheet-apt-2021.5.30.pdf)
+
+
 
