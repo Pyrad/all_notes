@@ -325,5 +325,5 @@ rsync -a source_dir target_dir --exclude mytemp --exclude mytemp2
 
 [The exec family of system calls](https://www2.it.uu.se/education/course/homepage/os/vt18/module-2/exec/)
 
-
+[How to debug the entry-point of fork-exec process in GDB? - StackOverflow](https://stackoverflow.com/questions/377195/how-to-debug-the-entry-point-of-fork-exec-process-in-gdb)
 
