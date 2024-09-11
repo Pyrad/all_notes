@@ -320,3 +320,10 @@ rsync -a source_dir target_dir --exclude mytemp --exclude mytemp2
 # Debugging Your Parser - Bison 3.8.1
 
 [Debugging Your Parser - Bison 3.8.1 - GNU](https://www.gnu.org/software/bison/manual/bison.html#Debugging)
+
+# Linux/Unix exec system call family
+
+[The exec family of system calls](https://www2.it.uu.se/education/course/homepage/os/vt18/module-2/exec/)
+
+
+
