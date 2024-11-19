@@ -327,3 +327,9 @@ rsync -a source_dir target_dir --exclude mytemp --exclude mytemp2
 
 [How to debug the entry-point of fork-exec process in GDB? - StackOverflow](https://stackoverflow.com/questions/377195/how-to-debug-the-entry-point-of-fork-exec-process-in-gdb)
 
+
+# GDB GUI
+
+[GDB front ends and other tools](https://sourceware.org/gdb/wiki/GDB%20Front%20Ends)
+
+
