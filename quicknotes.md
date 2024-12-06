@@ -333,3 +333,13 @@ rsync -a source_dir target_dir --exclude mytemp --exclude mytemp2
 [GDB front ends and other tools](https://sourceware.org/gdb/wiki/GDB%20Front%20Ends)
 
 
+# If a file is controlled by Git?
+
+```shell
+git ls-files --error-unmatch path/to/your/file
+```
+
+If it returns an error message, then it was not managed by Git. If it returns the file path, it is managed by Git.
+
+
+
