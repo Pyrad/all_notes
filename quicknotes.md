@@ -341,5 +341,13 @@ git ls-files --error-unmatch path/to/your/file
 
 If it returns an error message, then it was not managed by Git. If it returns the file path, it is managed by Git.
 
+# Bash find command with +
 
+[How can I grep the results of FIND using -EXEC and still output to a file? - StackExchange](https://unix.stackexchange.com/questions/21033/how-can-i-grep-the-results-of-find-using-exec-and-still-output-to-a-file)
+
+[Using semicolon (;) vs plus (+) with exec in find - Stack Overflow](https://stackoverflow.com/questions/6085156/using-semicolon-vs-plus-with-exec-in-find)
+
+```shell
+find . -type f -name "*.txt" -exec grep -l "is.*good" {} + > result.log
+```
 
