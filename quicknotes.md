@@ -351,3 +351,10 @@ If it returns an error message, then it was not managed by Git. If it returns th
 find . -type f -name "*.txt" -exec grep -l "is.*good" {} + > result.log
 ```
 
+# Vim check key map
+
+使用如下命令查看快捷键 `<C-y>` 映射
+
+```shell
+:verbose imap <C-y>
+```
