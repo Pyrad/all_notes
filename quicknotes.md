@@ -361,6 +361,7 @@ find . -type f -name "*.txt" -exec mv -t ./a_target_directory {} +
 
 这里就利用了 `mv` 的参数 `-t`，这样就可以使得 `{}` 是最后一个出现在 `+` 之前的option。
 
+[How to integrate mv command after find command?](https://unix.stackexchange.com/a/154819)
 
 
 # Vim check key map
@@ -370,3 +371,17 @@ find . -type f -name "*.txt" -exec mv -t ./a_target_directory {} +
 ```shell
 :verbose imap <C-y>
 ```
+
+
+# VS Code to fold specific lines
+
+[Fold selection](https://code.visualstudio.com/docs/editor/codebasics#_fold-selection)
+
+首先鼠标选中需要折叠的行，然后使用快捷键 `Ctrl` + `K` 加上 `Ctrl` + `,`。
+
+
+
+
+
+
+
