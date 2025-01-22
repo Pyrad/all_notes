@@ -379,7 +379,14 @@ find . -type f -name "*.txt" -exec mv -t ./a_target_directory {} +
 
 首先鼠标选中需要折叠的行，然后使用快捷键 `Ctrl` + `K` 加上 `Ctrl` + `,`。
 
+# GDB info line
 
+查看一个函数或一个变量位于哪个文件的哪一行，可以使用 `info line func_name/var_name`。
+
+```shell
+info line function_name
+info line variable_name
+```
 
 
 
