@@ -351,6 +351,18 @@ If it returns an error message, then it was not managed by Git. If it returns th
 find . -type f -name "*.txt" -exec grep -l "is.*good" {} + > result.log
 ```
 
+需要注意的是， `{}` 必须是最后一个得出现在 `+` 之前的字符串，否则会报错。
+
+一个例子是，如果想要把一些文件移动到另外一个目录中去，`mv` 命令就需要做如下的变动，
+
+```shell
+find . -type f -name "*.txt" -exec mv -t ./a_target_directory {} +
+```
+
+这里就利用了 `mv` 的参数 `-t`，这样就可以使得 `{}` 是最后一个出现在 `+` 之前的option。
+
+
+
 # Vim check key map
 
 使用如下命令查看快捷键 `<C-y>` 映射
