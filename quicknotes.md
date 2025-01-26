@@ -389,6 +389,10 @@ info line variable_name
 ```
 
 
+# Linux - sed to print lines with line numbers
 
+[Print line range from file, and include line numbers - StackExchange](https://unix.stackexchange.com/questions/605080/print-line-range-from-file-and-include-line-numbers)
 
-
+```shell
+sed -n '10,20{=;p}' file.txt | sed '{N; s/\n/ /}'
+```
