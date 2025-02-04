@@ -294,19 +294,6 @@ Boost Python Exposing C++ class with constructor taking a std::list
 
 [有哪些算法惊艳到了你？ - Yixiao Huang的回答 - 知乎](https://www.zhihu.com/question/26934313/answer/3528590082)
 
-# 拷贝文件目录，但跳过其中的某些文件
-
-[How to use 'cp' command to exclude a specific directory? - StackOverflow](https://stackoverflow.com/questions/2193584/copy-folder-recursively-excluding-some-folders)
-
-[How can I use cp to copy a directory but ignore a certain sub directory in Linux - Stack Exchange](https://superuser.com/questions/151970/how-can-i-use-cp-to-copy-a-directory-but-ignore-a-certain-sub-directory-in-linux)
-
-```shell
-rsync -a source_dir target_dir --exclude mytemp --exclude mytemp2
-```
-
-其中 `--exclude` 后面的文件（或文件目录）名称，是相对于 `source_dir` 的相对路径，可以同时指定多个需要跳过拷贝的文件（或目录）。
-
-
 # Coding Patterns for Python Extensions
 
 [Coding Patterns for Python Extensions - GitHub](https://pythonextensionpatterns.readthedocs.io/en/latest/index.html)
@@ -327,72 +314,3 @@ rsync -a source_dir target_dir --exclude mytemp --exclude mytemp2
 
 [How to debug the entry-point of fork-exec process in GDB? - StackOverflow](https://stackoverflow.com/questions/377195/how-to-debug-the-entry-point-of-fork-exec-process-in-gdb)
 
-
-# GDB GUI
-
-[GDB front ends and other tools](https://sourceware.org/gdb/wiki/GDB%20Front%20Ends)
-
-
-# If a file is controlled by Git?
-
-```shell
-git ls-files --error-unmatch path/to/your/file
-```
-
-If it returns an error message, then it was not managed by Git. If it returns the file path, it is managed by Git.
-
-# Bash find command with +
-
-[How can I grep the results of FIND using -EXEC and still output to a file? - StackExchange](https://unix.stackexchange.com/questions/21033/how-can-i-grep-the-results-of-find-using-exec-and-still-output-to-a-file)
-
-[Using semicolon (;) vs plus (+) with exec in find - Stack Overflow](https://stackoverflow.com/questions/6085156/using-semicolon-vs-plus-with-exec-in-find)
-
-```shell
-find . -type f -name "*.txt" -exec grep -l "is.*good" {} + > result.log
-```
-
-需要注意的是， `{}` 必须是最后一个得出现在 `+` 之前的字符串，否则会报错。
-
-一个例子是，如果想要把一些文件移动到另外一个目录中去，`mv` 命令就需要做如下的变动，
-
-```shell
-find . -type f -name "*.txt" -exec mv -t ./a_target_directory {} +
-```
-
-这里就利用了 `mv` 的参数 `-t`，这样就可以使得 `{}` 是最后一个出现在 `+` 之前的option。
-
-[How to integrate mv command after find command?](https://unix.stackexchange.com/a/154819)
-
-
-# Vim check key map
-
-使用如下命令查看快捷键 `<C-y>` 映射
-
-```shell
-:verbose imap <C-y>
-```
-
-
-# VS Code to fold specific lines
-
-[Fold selection](https://code.visualstudio.com/docs/editor/codebasics#_fold-selection)
-
-首先鼠标选中需要折叠的行，然后使用快捷键 `Ctrl` + `K` 加上 `Ctrl` + `,`。
-
-# GDB info line
-
-查看一个函数或一个变量位于哪个文件的哪一行，可以使用 `info line func_name/var_name`。
-
-```shell
-info line function_name
-info line variable_name
-```
-
-
-# Linux - sed to print lines with line numbers
-
-[Print line range from file, and include line numbers - StackExchange](https://unix.stackexchange.com/questions/605080/print-line-range-from-file-and-include-line-numbers)
-
-```shell
-sed -n '10,20{=;p}' file.txt | sed '{N; s/\n/ /}'
-```
