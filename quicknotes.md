@@ -314,3 +314,16 @@ Boost Python Exposing C++ class with constructor taking a std::list
 
 [How to debug the entry-point of fork-exec process in GDB? - StackOverflow](https://stackoverflow.com/questions/377195/how-to-debug-the-entry-point-of-fork-exec-process-in-gdb)
 
+# How would I extract a single file (or changes to a file) from a git stash?
+
+[How would I extract a single file (or changes to a file) from a git stash? - Stack Overflow](https://stackoverflow.com/questions/1105253/how-would-i-extract-a-single-file-or-changes-to-a-file-from-a-git-stash)
+
+For example, to check out a specific file `<filename>` from stash `0`,
+
+```shell
+git checkout stash@{0} -- <filename>
+```
+
+
+
+
