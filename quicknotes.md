@@ -324,6 +324,25 @@ For example, to check out a specific file `<filename>` from stash `0`,
 git checkout stash@{0} -- <filename>
 ```
 
+# Ctrl+H broken in tmux + vim
+
+[Scribler on Feb 16, 2023 · edited by Scribler](https://github.com/Swordfish90/cool-retro-term/issues/748#issuecomment-1432228044)
+
+> I was having this same issue, but I found a solution on unix.stackexchange
+> It makes tmux send Ctrl-H when Backspace is pressed and solved the issue for me
+>
+> [https://unix.stackexchange.com/questions/180087/why-pressing-ctrl-h-in-xterm-tmux-sends/180106#180106](https://unix.stackexchange.com/questions/180087/why-pressing-ctrl-h-in-xterm-tmux-sends/180106#180106)
+>
+> Just add the following toy $HOME/.tmux.conf file worked:
+>
+> ```shell
+> bind-key -n Bspace send-keys C-h
+> ```
+>
+> This link also had some insite into why it might be happening
+> [christoomey/vim-tmux-navigator#61](https://github.com/christoomey/vim-tmux-navigator/issues/61)
+>
+> hope this helps
 
 
 
