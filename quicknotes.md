@@ -344,5 +344,9 @@ git checkout stash@{0} -- <filename>
 >
 > hope this helps
 
+# Generating a parser using yacc - IBM
+
+[Important symbols used for debugging - Generating a parser using yacc - IBM](https://www.ibm.com/docs/en/zos/2.4.0?topic=topics-important-symbols-used-debugging)
+
 
 
