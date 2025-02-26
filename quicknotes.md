@@ -382,3 +382,9 @@ git checkout stash@{0} -- <filename>
 > }
 
 所以，关键就是在生成的`.dot`文件开始，加入`node [ordering=out]`这一句，`shape=circle`可以不加。
+
+而如果要在command line中实现，可以使用Option `-N<name>=<val>`，其中`name`就是`ordering`，`val`就是`out`。
+
+```shell
+dot atmp.dot -Nordering=out -Tpng atmp.dot
+```
