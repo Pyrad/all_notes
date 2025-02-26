@@ -354,3 +354,31 @@ git checkout stash@{0} -- <filename>
 
 [Bison manual - GNU](https://www.gnu.org/software/bison/manual/)
 
+# Create image by dot with ordering
+
+[How can I control within level node order in graphviz's dot? - Stack Overflow](https://stackoverflow.com/questions/44274518/how-can-i-control-within-level-node-order-in-graphvizs-dot)
+
+> I hit the same snag, and discovered the magic incantation is `ordering=out`
+> My full example looks like this:
+> ```dot
+> digraph game_tree {
+> node [shape = circle, ordering=out];
+> f, h [shape=doublecircle, color=red];
+> k, n [shape=doublecircle, color=blue];
+> l, m [shape=doublecircle];
+> a -> b [label=1];
+> a -> c [label=2];
+> a -> d [label=3];
+> b -> e [label=4];
+> b -> f [label=5];
+> c -> g [label=4];
+> c -> h [label=5];
+> d -> i [label=4];
+> d -> j [label=5];
+> e -> k [label=6];
+> g -> l [label=6];
+> i -> m [label=7];
+> j -> n [label=8];
+> }
+
+所以，关键就是在生成的`.dot`文件开始，加入`node [ordering=out]`这一句，`shape=circle`可以不加。
