@@ -348,5 +348,9 @@ git checkout stash@{0} -- <filename>
 
 [Important symbols used for debugging - Generating a parser using yacc - IBM](https://www.ibm.com/docs/en/zos/2.4.0?topic=topics-important-symbols-used-debugging)
 
+# 8. Debugging Your Parser
 
+[8. Debugging Your Parser - Table of Contents](https://fog.misty.com/perry/osp/references/bison/by-chapter/bison_11.html)
+
+[Bison manual - GNU](https://www.gnu.org/software/bison/manual/)
 
