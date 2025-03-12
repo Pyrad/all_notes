@@ -393,3 +393,5 @@ dot atmp.dot -Nordering=out -Tpng atmp.dot
 
 [Python - Extract a PDF page as a jpeg - Stack Overflow](https://stackoverflow.com/questions/46184239/python-extract-a-pdf-page-as-a-jpeg)
 
+How to change the DPI when converting: [How do i set the resolution of the pixmap for a page](https://github.com/pymupdf/PyMuPDF/issues/181)
+
