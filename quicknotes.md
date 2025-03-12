@@ -388,3 +388,8 @@ git checkout stash@{0} -- <filename>
 ```shell
 dot atmp.dot -Nordering=out -Tpng atmp.dot
 ```
+
+# PDF to images
+
+[Python - Extract a PDF page as a jpeg - Stack Overflow](https://stackoverflow.com/questions/46184239/python-extract-a-pdf-page-as-a-jpeg)
+
