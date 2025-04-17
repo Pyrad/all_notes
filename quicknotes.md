@@ -395,3 +395,8 @@ dot atmp.dot -Nordering=out -Tpng atmp.dot
 
 How to change the DPI when converting: [How do i set the resolution of the pixmap for a page](https://github.com/pymupdf/PyMuPDF/issues/181)
 
+# Git command to show conflict files only when rebasing a branch
+
+```sh
+git diff --name-only --diff-filter=U
+```
