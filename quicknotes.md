@@ -400,3 +400,101 @@ How to change the DPI when converting: [How do i set the resolution of the pixma
 ```sh
 git diff --name-only --diff-filter=U
 ```
+
+### 处理 git base 时出现的conflict问题
+
+当使用`git rebase <master-branch>`这个命令时，可能出现conflict的情况：
+
+```sh
+... ...
+error: could not apply 2c2b01b1289... XXXXX
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 2c2b01b1289... XXXXX
+```
+
+如果查看`git status`，就发现，如果使用交互式resolve conflict的办法来做rebase，那么
+需要执行多次command才能完成，如下：
+
+```sh
+Last commands done (4 commands done):
+   pick 28584bab196 XXXXX
+   pick 29c1e14191f XXXXX
+  (see more in file .git/rebase-merge/done)
+Next commands to do (39 remaining commands):
+   pick a8a34cd7940 XXXXX
+   pick c0e90fff664 XXXXX
+  (use "git rebase --edit-todo" to view and edit)
+You are currently rebasing branch '<local-branch>' on 'b758c7d5b6e'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   <path/to/file.cpp>
+```
+
+此时可以使用两种办法来解决冲突，并完成`git rebase`。
+
+#### 手动处理
+
+这个办法是交互式处理的办法，即每次执行：
+
+```sh
+git checkout --theirs <files_to_resolve>
+```
+
+这个命令是对于当前rebase时，需要resolve的文件，直接使用`theirs`的改动来覆盖当前
+branch上对应的文件。`<files_to_resolve>`可以通过`git status`查看。
+
+执行完上面的命令之后，需要把这个（或这些resolve的）文件依次add：
+
+```sh
+git add <files_after_resolved>
+```
+
+然后继续rebase：
+
+```sh
+git rebase --continue
+```
+
+此时就会进行下一次的resolve conflict，重复上述过程，直到完成所有conflict resolve的
+操作，最后才能完成rebase。
+
+#### 自动处理
+
+如果需要执行很多次交互式的命令，但每次都只需要从`theirs`的改动覆盖当前branch的文件上，
+那么可以使用recursive的命令。
+
+首先，如果当前已经在rebase的过程中了，那么需要先把退出当前的rebase：
+
+```sh
+git rebase --abort
+```
+
+然后，使用如下命令，递归完成apply theirs changes的操作：
+
+```sh
+git rebase -s recursive -X theirs master
+```
+
+这个命令会对所有需要resolve conflict的命令都依次执行`git checkout --theirs`的操作。
+
+完成上面递归命令之后，继续rebase即可：
+
+```sh
+git rebase --continue
+```
+
+
+
+
+
+
+
+
