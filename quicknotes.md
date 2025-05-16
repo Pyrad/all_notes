@@ -489,6 +489,11 @@ git rebase -s recursive -X theirs master
 git rebase --continue
 ```
 
+## PlantUML in Sphinx (using MyST Markdown) and GitLab
+
+MyST-parser集成PlantUML？
+
+[PlantUML in Sphinx (using MyST Markdown) and GitLab](https://smhk.net/note/2023/11/plantuml-in-sphinx-using-myst-and-gitlab/)
 
 
 
