@@ -495,6 +495,20 @@ MyST-parser集成PlantUML？
 
 [PlantUML in Sphinx (using MyST Markdown) and GitLab](https://smhk.net/note/2023/11/plantuml-in-sphinx-using-myst-and-gitlab/)
 
+## Check differences of a file in git stash
+
+查看文件和其对应的working tree中文件的差异
+
+```sh
+git difftool stash@{0} -- <file-path>
+```
+
+查看文件和最新的commit的文件的差异
+
+```sh
+git difftool stash@{0} HEAD -- <file-path>
+```
+
 
 
 
