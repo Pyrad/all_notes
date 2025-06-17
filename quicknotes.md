@@ -515,3 +515,13 @@ git difftool stash@{0} HEAD -- <file-path>
 
 
 
+
+## Z-library URLs
+
+电子书最新地址 本页面提供Z-library（Zlibrary）最新地址、镜像、客户端下载等信息，帮助您安全访问Zlibrary电子书资源。
+https://book.clouds.pp.ua/
+
+Z-library
+https://zh.zlibm.ru/
+
+
