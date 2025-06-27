@@ -525,3 +525,24 @@ Z-library
 https://zh.zlibm.ru/
 
 
+## Error when to install leaderF's C extension: ssl support is missing
+
+Reference: [pip is configured with locations that require TLS/SSL, ...](https://stackoverflow.com/questions/45954528/pip-is-configured-with-locations-that-require-tls-ssl-however-the-ssl-module-in)
+
+```shell
+WARNING: Disabling truststore since ssl support is missing
+WARNING: pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.
+Could not fetch URL https://pypi.org/simple/pip/: There was a problem confirming the ssl certificate: HTTPSConnectionPool(host='pypi.org', port=443): Max retries exceeded with url: /simple/pip/ (Caused by SSLError("Can't connect to HTTPS URL because the SSL module is not available.")) - skipping
+ERROR: No matching distribution found for neovim
+```
+
+Reason why: missing SSL lib files.
+
+How to fix (Ubuntu):
+
+```shell
+apt-get install libssl-dev
+```
+
+
+
