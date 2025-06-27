@@ -569,3 +569,10 @@ vim.opt.grepprg = "rg --vimgrep"
 vim.opt.grepformat = "%f:%l:%c:%m"
 ```
 
+
+## C++ Project with CMake
+
+基于CMake的大型C++工程组织 - 尘中远的文章 - 知乎
+
+[https://zhuanlan.zhihu.com/p/1921844918151799587](https://zhuanlan.zhihu.com/p/1921844918151799587)
+
