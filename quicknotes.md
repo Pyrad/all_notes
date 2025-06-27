@@ -527,7 +527,10 @@ https://zh.zlibm.ru/
 
 ## Error when to install leaderF's C extension: ssl support is missing
 
-Reference: [pip is configured with locations that require TLS/SSL, ...](https://stackoverflow.com/questions/45954528/pip-is-configured-with-locations-that-require-tls-ssl-however-the-ssl-module-in)
+Reference:
+
+1. [pip is configured with locations that require TLS/SSL, ...](https://stackoverflow.com/questions/45954528/pip-is-configured-with-locations-that-require-tls-ssl-however-the-ssl-module-in)
+2. ["Failed to load python3 host" on NeoVim](https://github.com/fsharp/zarchive-vim-fsharp/issues/96)
 
 ```shell
 WARNING: Disabling truststore since ssl support is missing
@@ -544,5 +547,5 @@ How to fix (Ubuntu):
 apt-get install libssl-dev
 ```
 
-
+Same error happened when installing LeadF in neovim/vim.
 
