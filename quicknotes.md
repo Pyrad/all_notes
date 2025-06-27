@@ -552,6 +552,10 @@ Same error happened when installing LeadF in neovim/vim.
 
 ## rg in neovim
 
+[Using ripgrep as grepprg to search in the current project](https://www.reddit.com/r/neovim/comments/1c0bemk/using_ripgrep_as_grepprg_to_search_in_the_current/)
+
+[ripgrep - GitHub](https://github.com/BurntSushi/ripgrep)
+
 Install `rg` first,
 
 ```shell
