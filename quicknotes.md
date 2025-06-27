@@ -549,3 +549,19 @@ apt-get install libssl-dev
 
 Same error happened when installing LeadF in neovim/vim.
 
+
+## rg in neovim
+
+Install `rg` first,
+
+```shell
+apt-get install ripgrep
+```
+
+Then set vim option in `init.lua`.
+
+```vim
+vim.opt.grepprg = "rg --vimgrep"
+vim.opt.grepformat = "%f:%l:%c:%m"
+```
+
