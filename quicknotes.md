@@ -576,3 +576,54 @@ vim.opt.grepformat = "%f:%l:%c:%m"
 
 [https://zhuanlan.zhihu.com/p/1921844918151799587](https://zhuanlan.zhihu.com/p/1921844918151799587)
 
+
+## Microsoft-Activation-Scripts
+
+[Microsoft Activation Scripts (MAS)](https://github.com/massgravel/Microsoft-Activation-Scripts)
+
+Method 1 - PowerShell (Windows 8 and later)
+
+1. Open PowerShell
+
+   To do that, press the Windows key + X, then select PowerShell or Terminal.
+
+2. Copy and paste the code below, then press enter.
+
+   ```powershell
+   irm https://get.activated.win | iex
+   ```
+
+   Alternatively, you can use the following (this will be deprecated in the future):
+
+   ```powershell
+   irm https://massgrave.dev/get | iex
+   ```
+
+3. You will see the activation options. Choose the activation options highlighted in green.
+
+4. That's all
+
+
+Method 2 - Traditional (Windows Vista and later)
+
+1. Download the file using one of the links below:
+
+   ```shell
+   https://github.com/massgravel/Microsoft-Activation-Scripts/archive/refs/heads/master.zip
+   ```
+
+   or
+
+   ```shell
+   https://git.activated.win/massgrave/Microsoft-Activation-Scripts/archive/master.zip
+   ```
+
+2. Right-click on the downloaded zip file and extract it.
+
+3. In the extracted folder, find the folder named All-In-One-Version.
+
+4. Run the file named MAS_AIO.cmd.
+
+5. You will see the activation options. Follow the on-screen instructions.
+
+6. That's all.
