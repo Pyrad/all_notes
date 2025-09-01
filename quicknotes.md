@@ -627,3 +627,19 @@ Method 2 - Traditional (Windows Vista and later)
 5. You will see the activation options. Follow the on-screen instructions.
 
 6. That's all.
+
+## Git: bad object ref/tags/<tag_name>
+
+如果出现这个错误，但下面的路径中又没有这个tag对应名字的文件，
+
+```shell
+./.git/refs/tags/
+```
+
+可以直接使用如下命令来把这个tag删除掉，从而解决这个错误问题。
+
+```shell
+git tag -d <tag_name>
+```
+
+
