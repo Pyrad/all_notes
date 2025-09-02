@@ -647,3 +647,8 @@ git tag -d <tag_name>
 [Geometric Tools](https://www.geometrictools.com/)
 
 [Documentation - Geometric Tools](https://www.geometrictools.com/Documentation/Documentation.html)
+
+
+## C/C++ libraries
+
+[你工作中最推荐的 C/C++ 程序库有哪些，为什么？ - iiif的回答 - 知乎](https://www.zhihu.com/question/51134387/answer/571858930)
