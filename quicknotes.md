@@ -642,4 +642,8 @@ Method 2 - Traditional (Windows Vista and later)
 git tag -d <tag_name>
 ```
 
+## Geometric Tools
 
+[Geometric Tools](https://www.geometrictools.com/)
+
+[Documentation - Geometric Tools](https://www.geometrictools.com/Documentation/Documentation.html)
