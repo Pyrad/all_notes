@@ -765,6 +765,76 @@ readelf -d ./openssl| grep "RPATH\|RUNPATH"
 ldd openssl
 ```
 
+### Install Python
 
+```shell
+SSL_SEARCH_PATH='/home/pyrad/proc/openssl3.5.2'
+
+GCC_PATH="/path/to/gcc-13.2.0"
+CXX_BIN="${GCC_PATH}/bin/g++"
+CC_BIN="${GCC_PATH}/bin/gcc"
+
+GLIBC_PATH="/home/pyrad/proc/glibc2.42"
+
+export TCLTK_CFLAGS="-I${TCL_INC} -I${TK_INC}"
+export TCLTK_LIBS="-L$TCL_LIB -L$TK_LIB -l${TCL_LIB_NAME} -l${TK_LIB_NAME}"
+
+# Path of tarball
+TARBALL_PATH=`dirname $TARBALL`
+# Remove the trailing "/" from the path string, as it might be redundant later
+TARBALL_PATH=${TARBALL_PATH%/}
+# echo "TARBALL_PATH is $TARBALL_PATH"
+
+# Step 1.0: Check the folder name in tarball
+PY_FOLDER=`$TARCMD -tf $TARBALL_NAME | head -n 1`
+PY_FOLDER=${PY_FOLDER%/}
+
+export LDFLAGS="-L${SSL_SEARCH_PATH}/lib64 -lssl -lpthread -ldl -Wl,--rpath=${SSL_SEARCH_PATH}/lib64:${INSTALL_TO_PATH}/lib"
+export CFLAGS="-I${SSL_SEARCH_PATH}/include"
+
+LDFLAGS_VAL="-L${SSL_SEARCH_PATH}/lib64"
+LDFLAGS_VAL="$LDFLAGS -lssl -lpthread -ldl"
+LDFLAGS_VAL="$LDFLAGS -Wl,--rpath=${SSL_SEARCH_PATH}/lib64:${INSTALL_TO_PATH}/lib"
+export LDFLAGS=$LDFLAGS_VAL
+
+if [[ -e $CONFIG_EXEC_FILE ]]; then
+    if [[ $TESTMODE -ne 1 ]]; then
+        echo "[$INFO] Start configuration"
+        $CONFIG_EXEC_FILE --prefix=${INSTALL_TO_PATH} \
+           --enable-optimizations \
+           --with-lto \
+           CXX=${CXX_BIN} CC=${CC_BIN} \
+           --enable-shared \
+           --with-openssl=$SSL_SEARCH_PATH \
+           --with-openssl-rpath=${SSL_SEARCH_PATH}/lib64 \
+
+
+        if [[ $? -eq 0 ]]; then
+           echo -e "[${INFO}] Configuration done (without error)"
+        else
+           echo -e "[${INFO}] Configuration failed (error occurred)"
+           exit
+        fi
+
+        echo -e "[${INFO}] Configuration done"
+    else
+        echo -e "[$WARNING] Test-mode, skip configuration"
+        echo -e "[$WARNING] Configuration command:"
+        echo -e "[$WARNING]    $CONFIG_EXEC_FILE --prefix=${INSTALL_TO_PATH} \\"
+        echo -e "[$WARNING]       --enable-optimizations --with-lto \\"
+        echo -e "[$WARNING]       CXX=${CXX_BIN} CC=${CC_BIN} \\"
+        echo -e "[$WARNING]       --enable-shared --with-tcltk-includes=\"-I${TCL_INC} -I${TK_INC}\" \\"
+        echo -e "[$WARNING]       --with-openssl=$SSL_SEARCH_PATH \\"
+        echo -e "[$WARNING]       --with-tcltk-libs=\"-L${TCL_LIB} -L${TK_LIB} -l${TCL_LIB_NAME} -l${TK_LIB_NAME}\" \\"
+    fi
+else
+    echo -e "[$ERROR] Can't find configure file, exit"
+    exit
+fi
+
+
+unset TCLTK_CFLAGS
+unset TCLTK_LIBS
+```
 
 
