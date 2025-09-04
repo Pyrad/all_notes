@@ -652,3 +652,119 @@ git tag -d <tag_name>
 ## C/C++ libraries
 
 [你工作中最推荐的 C/C++ 程序库有哪些，为什么？ - iiif的回答 - 知乎](https://www.zhihu.com/question/51134387/answer/571858930)
+
+
+## Compile script changes
+
+### For tcl & tk
+
+```shell
+export CFLAGS="-I/home/pyrad/proc/$INSTALL_DIR_NAME/include"
+export LDFLAGS="-L/home/pyrad/proc/$INSTALL_DIR_NAME/lib -Wl,-rpath,/home/pyrad/proc/$INSTALL_DIR_NAME/lib"
+
+make -j $n_cpu
+
+unset CFLAGS
+unset LDFLAGS
+```
+
+### Install openssl
+
+
+网页地址：[https://github.com/openssl/openssl](https://github.com/openssl/openssl)
+
+下载地址：[https://github.com/openssl/openssl/releases](https://github.com/openssl/openssl/releases)
+
+下载链接：[https://github.com/openssl/openssl/releases/download/openssl-3.5.2/openssl-3.5.2.tar.gz](https://github.com/openssl/openssl/releases/download/openssl-3.5.2/openssl-3.5.2.tar.gz)
+
+安装说明指导页面：[Quick Installation Guide - Build and Install - openssl/INSTALL.md](https://github.com/openssl/openssl/blob/master/INSTALL.md#quick-installation-guide)
+
+编译安装之前，先创建安装目录
+
+```sh
+mkdir -p /path/to/proc/openssl3.5.2
+mkdir -p /path/to/proc/openssl3.5.2/ssl
+```
+
+这里创建 `ssl` 目录的原因，是根据[Notes for UNIX-like platforms](https://github.com/openssl/openssl/blob/master/NOTES-UNIX.md)
+中所述， 需要指定 `--openssl` configuration参数。
+
+此外，为了能够使得 `openssl` 找到编译之后对应的 `libssl.so.3` 和 `libcrypto.so.3`，
+需要按照它的安装到的目录的约定，加上`-Wl,rpath,$PATH_TO_LIBSSL_SO`，
+根据前面几次尝试编译的结果，这里的`PATH_TO_LIBSSL_SO`实际上是：
+
+```sh
+/path/to/proc/openssl3.5.2/lib64
+```
+
+所以 configuration的命令实际上如下：
+
+```sh
+time ./Configure --prefix=/path/to/proc/openssl3.5.2 \
+                 --openssldir=/path/to/proc/openssl3.5.2/ssl \
+                 '-Wl,-rpath,/path/to/proc/openssl3.5.2/lib64'
+```
+
+此处，可以在源码目录中创建一个单独用来保存编译临时文件的目录，然后再在其中config
+以及编译即可。
+
+所以，综上所述，最终编译和安装的命令如下：
+
+```sh
+mkdir -p /path/to/proc/openssl3.5.2
+mkdir -p /path/to/proc/openssl3.5.2/ssl
+
+cd openssl-3.5.2/
+mkdir longcBuild20250815
+cd longcBuild20250815/
+
+time ../Configure --prefix=/path/to/proc/openssl3.5.2 \
+                  --openssldir=/path/to/proc/openssl3.5.2/ssl \
+                  '-Wl,-rpath,/path/to/proc/openssl3.5.2/lib64'
+time make -j 4
+time make install
+```
+
+实际上，`-Wl,-rpath,/whatever/path` 编译选项，可以通过环境变量来设定。
+
+```sh
+export CFLAGS="-I/path/to/proc/openssl3.5.2/lib64"
+export LDFLAGS="-L/path/to/proc/openssl3.5.2/lib64 -Wl,-rpath,/path/to/proc/openssl3.5.2/lib64"
+
+time ../Configure --prefix=/path/to/proc/openssl3.5.2 \
+                  --openssldir=/path/to/proc/openssl3.5.2/ssl \
+make
+make install
+```
+
+如上：
+
+- `CFLAGS="-I/path/to/proc/openssl3.5.2/lib64"`
+
+  This tells the compiler where to find the openssl header files.
+
+- `LDFLAGS="-L/path/to/proc/openssl3.5.2/lib64 -Wl,-rpath,/path/to/proc/openssl3.5.2/lib64"`
+
+  - `-L/path/to/proc/openssl3.5.2/lib64`
+
+    This tells the linker where to find the openssl library files during compilation.
+
+  - `-Wl,-rpath,$/path/to/proc/openssl3.5.2/lib64"`
+
+    This passes the `-rpath` option to the linker (`-Wl`, forwards the argument to the linker),
+    embedding the specified path (`/path/to/proc/openssl3.5.2/lib64`) into
+    the openssl binary, so it knows where to search for openssl libs at runtime.
+
+如此编译完成之后，就可以通过如下命令来查看RPATH是否设置成功，
+
+```sh
+readelf -d ./openssl| grep "RPATH\|RUNPATH"
+```
+
+```sh
+ldd openssl
+```
+
+
+
+
