@@ -838,3 +838,9 @@ unset TCLTK_LIBS
 ```
 
 
+## How to set default user for manually installed WSL distro?
+
+[How to set default user for manually installed WSL distro?](https://superuser.com/questions/1566022/how-to-set-default-user-for-manually-installed-wsl-distro)
+
+
+
